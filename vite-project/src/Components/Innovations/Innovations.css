@@ -1,10 +1,10 @@
 .innovations-wrapper {
-  width: 100%;
+  width: 100% !important;
 }
 
 /* Image Slider Styles */
 .innovations-container {
-  width: 100%;
+  width: 100% ;
   height: 600px;
   position: relative;
   overflow: hidden;

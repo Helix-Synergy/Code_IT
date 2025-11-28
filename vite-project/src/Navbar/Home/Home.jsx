@@ -5,6 +5,7 @@ import Footer from "../../Components/Footer/Footer";
 import Marquee1 from "../../Components/Marquee/Marquee1.jsx"
 import Technologies from '../../Components/Technologies/Technologies.jsx'
 import Innovations from '../../Components/Innovations/Innovations.jsx'
+import Vision from "../../Components/Vision/Vision.jsx";
 const Home = () => {
 
   useEffect(() => {
@@ -67,6 +68,7 @@ const Home = () => {
 <br />
 
        <Innovations/>
+       <Vision/>
    <Technologies/>
  <Marquee1/>
     </div>
