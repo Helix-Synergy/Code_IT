@@ -1,0 +1,145 @@
+/* Existing reset kept same */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  background: #0A0D1F;
+  font-family: Arial, sans-serif;
+}
+
+.home-section {
+  background: #0A0D1F;
+  min-height: 100vh;
+  padding: 20px 60px;
+  color: white;
+}
+
+/* Navbar Layout */
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 25px;
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(90deg, #fe00ff, #0095ff) 1;
+}
+
+/* Updated Logo Size */
+.logo img {
+  width: 160px;          /* Perfect width */
+  height: auto;          /* No crop */
+  object-fit: contain;   /* Fit inside */
+}
+
+/* Navbar Links */
+.home-nav {
+  display: flex;
+  gap: 28px;
+}
+
+.home-nav a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.home-nav a:hover {
+  color: #00aaff;
+}
+
+/* Right Side Section */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Google Translate Box */
+.translate-box {
+  background: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+/* Contact Number Button */
+.call-btn {
+  padding: 10px 26px;
+  background: linear-gradient(90deg, #fe00ff, #0095ff);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.call-btn:hover {
+  transform: scale(1.06);
+}
+
+/* Hero Section (unchanged) */
+.hero-content {
+  margin-top: 80px;
+}
+
+.hero-content h1 {
+  font-size: 55px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.hero-content span {
+  background: linear-gradient(90deg, #fe00ff, #0095ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #bbb;
+}
+
+.hero-btn {
+  margin-top: 35px;
+  padding: 14px 26px;
+  border: none;
+  background: linear-gradient(90deg, #fe00ff, #0095ff);
+  border-radius: 6px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.hero-btn:hover {
+  transform: scale(1.05);
+}
+
+/* ----------------------- */
+/* Google Translate Fixes */
+/* ----------------------- */
+
+.goog-te-gadget {
+  font-size: 0 !important;
+}
+
+.goog-te-gadget select {
+  font-size: 14px !important;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+.goog-logo-link,
+.goog-te-gadget span {
+  display: none !important;
+}

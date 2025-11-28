@@ -1,0 +1,612 @@
+.innovations-wrapper {
+  width: 100%;
+}
+
+/* Image Slider Styles */
+.innovations-container {
+  width: 100%;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Text content at top-left */
+.slide-content {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  color: white;
+  text-align: left;
+  max-width: 600px;
+  width: auto;
+}
+
+.slide-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.slide-content p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin: 0 0 2rem 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Services boxes in row at bottom-right */
+.slider-services-container {
+  position: absolute;
+  right: 60px;
+  bottom: 60px;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+}
+
+/* Smaller service boxes */
+.slider-service-box {
+  position: relative;
+  padding: 15px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider-service-background-square {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.slider-service-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.slider-service-number {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 5px;
+  line-height: 1;
+}
+
+.slider-service-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.slider-service-box:hover .slider-service-background-square {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.05);
+}
+
+.slider-service-box.active .slider-service-background-square {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.slider-service-box.active .slider-service-number {
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.slider-service-box.active .slider-service-title {
+  color: white;
+  font-weight: 700;
+}
+
+/* Navigation buttons */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 10;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn {
+  left: 30px;
+}
+
+.next-btn {
+  right: 30px;
+}
+
+/* Dots indicator */
+.dots-container {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  z-index: 10;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: white;
+  transform: scale(1.3);
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* Services Section Below */
+.services-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.service-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-box:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.service-number {
+  font-size: 4rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 15px;
+  line-height: 1;
+}
+
+.service-content {
+  position: relative;
+  z-index: 2;
+}
+
+.service-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.service-description {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.service-hover-effect {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.service-box:hover .service-hover-effect {
+  left: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .services-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+  }
+}
+
+@media (max-width: 992px) {
+  .innovations-container {
+    height: 700px;
+  }
+  
+  .slide-content {
+    top: 40px;
+    left: 40px;
+    max-width: 500px;
+  }
+  
+  .slider-services-container {
+    right: 40px;
+    bottom: 40px;
+    gap: 12px;
+  }
+  
+  .slider-service-box {
+    width: 90px;
+    height: 90px;
+    padding: 12px;
+  }
+  
+  .slider-service-number {
+    font-size: 1.3rem;
+  }
+  
+  .slider-service-title {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .innovations-container {
+    height: 650px;
+  }
+  
+  .slide-content {
+    top: 30px;
+    left: 30px;
+    max-width: 400px;
+  }
+  
+  .slide-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  .slide-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .slider-services-container {
+    right: 30px;
+    bottom: 30px;
+    gap: 10px;
+  }
+  
+  .slider-service-box {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+  }
+  
+  .slider-service-number {
+    font-size: 1.2rem;
+  }
+  
+  .slider-service-title {
+    font-size: 0.7rem;
+  }
+  
+  .nav-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+  }
+  
+  .prev-btn {
+    left: 15px;
+  }
+  
+  .next-btn {
+    right: 15px;
+  }
+  
+  .services-section {
+    padding: 60px 15px;
+  }
+  
+  .services-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 500px;
+  }
+  
+  .service-box {
+    padding: 30px 20px;
+    min-height: 200px;
+  }
+  
+  .service-number {
+    font-size: 3.5rem;
+  }
+  
+  .service-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .innovations-container {
+    height: 600px;
+  }
+  
+  .slide-content {
+    top: 20px;
+    left: 20px;
+    max-width: 300px;
+  }
+  
+  .slide-content h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .slide-content p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .slider-services-container {
+    right: 20px;
+    bottom: 20px;
+    gap: 8px;
+  }
+  
+  .slider-service-box {
+    width: 70px;
+    height: 70px;
+    padding: 8px;
+  }
+  
+  .slider-service-number {
+    font-size: 1.1rem;
+    margin-bottom: 3px;
+  }
+  
+  .slider-service-title {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .innovations-container {
+    height: 550px;
+  }
+  
+  .slide-content {
+    top: 15px;
+    left: 15px;
+    max-width: 250px;
+  }
+  
+  .slide-content h1 {
+    font-size: 1.6rem;
+  }
+  
+  .slide-content p {
+    font-size: 0.9rem;
+  }
+  
+  .slider-services-container {
+    right: 15px;
+    bottom: 15px;
+    gap: 6px;
+  }
+  
+  .slider-service-box {
+    width: 60px;
+    height: 60px;
+    padding: 6px;
+  }
+  
+  .slider-service-number {
+    font-size: 1rem;
+  }
+  
+  .slider-service-title {
+    font-size: 0.6rem;
+  }
+  
+  .nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+  
+  .dots-container {
+    bottom: 20px;
+    gap: 10px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .services-section {
+    padding: 40px 10px;
+  }
+  
+  .service-box {
+    padding: 25px 15px;
+    min-height: 180px;
+  }
+  
+  .service-number {
+    font-size: 3rem;
+  }
+  
+  .service-title {
+    font-size: 1.4rem;
+  }
+  
+  .service-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .innovations-container {
+    height: 500px;
+  }
+  
+  .slide-content h1 {
+    font-size: 1.5rem;
+  }
+  
+  .slide-content p {
+    font-size: 0.9rem;
+  }
+  
+  .slider-service-box {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .slider-service-number {
+    font-size: 0.9rem;
+  }
+  
+  .slider-service-title {
+    font-size: 0.55rem;
+  }
+  
+  .service-box {
+    padding: 20px 15px;
+    min-height: 160px;
+  }
+  
+  .service-number {
+    font-size: 2.5rem;
+  }
+  
+  .service-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .services-section {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .service-box {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid white;
+  }
+  
+  .slider-service-background-square {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .slide,
+  .service-box,
+  .nav-btn,
+  .dot,
+  .service-hover-effect,
+  .slider-service-box,
+  .slider-service-background-square {
+    transition: none;
+  }
+  
+  .service-box:hover {
+    transform: none;
+  }
+  
+  .slider-service-box:hover .slider-service-background-square {
+    transform: none;
+  }
+}
