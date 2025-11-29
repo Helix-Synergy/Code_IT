@@ -1,0 +1,224 @@
+.about-section {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0d1f 0%, #1a1f3d 100%);
+  padding: 0;
+  margin: 0;
+}
+
+.about-header {
+  background-image: url('https://codeitconsulting.co.in/assets/img/about/two/Untitled-design.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.about-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 13, 31, 0.8);
+}
+
+.about-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  gap: 60px;
+}
+
+.about-text {
+  flex: 1;
+  color: #ffffff;
+}
+
+.about-codeit {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.about-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #e2e8f0;
+  text-align: justify;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(102, 126, 234, 0.4);
+}
+
+/* ================ MEDIA QUERIES ================= */
+
+/* ------ Laptop (1024px - 1366px) ------ */
+@media (max-width: 1366px) {
+  .about-header {
+    height: 280px;
+  }
+  
+  .about-title {
+    font-size: 3.5rem;
+  }
+  
+  .about-content {
+    padding: 70px 20px;
+    gap: 50px;
+  }
+  
+  .about-codeit {
+    font-size: 2.8rem;
+  }
+  
+  .about-description {
+    font-size: 1.05rem;
+  }
+  
+  .about-image img {
+    max-width: 450px;
+  }
+}
+
+/* ------ Tablet (768px - 1023px) ------ */
+@media (max-width: 1023px) {
+  .about-header {
+    height: 250px;
+  }
+  
+  .about-title {
+    font-size: 3rem;
+    letter-spacing: 2px;
+  }
+  
+  .about-content {
+    flex-direction: column;
+    padding: 60px 20px;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .about-codeit {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+  }
+  
+  .about-description {
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .about-image img {
+    max-width: 400px;
+  }
+}
+
+/* ------ Mobile (481px - 767px) ------ */
+@media (max-width: 767px) {
+  .about-section {
+    min-height: auto;
+  }
+  
+  .about-header {
+    height: 200px;
+  }
+  
+  .about-title {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+  }
+  
+  .about-content {
+    padding: 50px 15px;
+    gap: 35px;
+  }
+  
+  .about-codeit {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .about-description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: left;
+  }
+  
+  .about-image img {
+    max-width: 350px;
+    border-radius: 15px;
+  }
+}
+
+/* ------ Small Mobile (0px - 480px) ------ */
+@media (max-width: 480px) {
+  .about-header {
+    height: 180px;
+  }
+  
+  .about-title {
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .about-content {
+    padding: 40px 10px;
+    gap: 30px;
+  }
+  
+  .about-codeit {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  .about-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  
+  .about-image img {
+    max-width: 300px;
+    border-radius: 12px;
+  }
+}
