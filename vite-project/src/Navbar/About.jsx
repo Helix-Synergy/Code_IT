@@ -2,9 +2,12 @@ import React from "react";
 import "./About.css";
 const About = () => {
   return (
+    //
     <div className="about-section">
-      <div className="about-header">
-        <h1 className="about-title">About Us</h1>
+      <div className="about-header" style={{
+    backgroundImage: 'url("https://codeitconsulting.co.in/assets/img/about/two/Untitled-design.png")'
+  }}>
+        <h1 className="about-title" >About Us</h1>
       </div>
       <div className="about-content">
         <div className="about-text">
