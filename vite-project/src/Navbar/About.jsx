@@ -4,9 +4,12 @@ const About = () => {
   return (
     //
     <div className="about-section">
-      <div className="about-header" style={{
-    backgroundImage: 'url("https://codeitconsulting.co.in/assets/img/about/two/Untitled-design.png")'
-  }}>
+<div
+  className="about-header"
+  style={{
+    backgroundImage: 'url("/Images/New folder 1/Untitled-design.webp")'
+  }}
+>
         <h1 className="about-title" >About Us</h1>
       </div>
       <div className="about-content">
