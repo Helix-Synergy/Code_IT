@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { IoMdMenu } from "react-icons/io";
-import "../Home/Home.css"
+import "../Home/Home.css";
+
 const Navbar2 = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // NEW: Controls which dropdown is open in mobile
+  const [activeSubmenu, setActiveSubmenu] = useState(null);
+
+  const toggleSubmenu = (menu) => {
+    setActiveSubmenu(activeSubmenu === menu ? null : menu);
+  };
 
   useEffect(() => {
     if (!document.getElementById("google-translate-script")) {
@@ -15,9 +23,7 @@ const Navbar2 = () => {
     }
 
     window.googleTranslateElementInit = () => {
-      const translateElement = document.getElementById(
-        "google_translate_element"
-      );
+      const translateElement = document.getElementById("google_translate_element");
       translateElement.innerHTML = "";
 
       new window.google.translate.TranslateElement(
@@ -29,10 +35,8 @@ const Navbar2 = () => {
 
   return (
     <>
-      {/* Navbar */}
       <header className="home-header">
-
-        {/* Logo */}
+        {/* Logo Section */}
         <div className="logo">
           <img
             src="/Images/WhatsApp Image 2025-11-27 at 14.02.01_88f46c57.jpg"
@@ -40,63 +44,48 @@ const Navbar2 = () => {
           />
         </div>
 
-        {/* Navigation */}
+        {/* Desktop / Tablet Navigation */}
         <nav className="home-nav">
           <Link to="/">Home</Link>
           <Link to="/about">About Us</Link>
-          {/* <Link to="/service">Services</Link> */}
-          <div className="dropdown">
-  <span className="dropbtn" style={{color:"#ddd"}}>Services ▾</span>
 
-  <div className="dropdown-content">
-    <Link to="/digital-transformation">Digital Transformation</Link>
-    <Link to="/software-development">Software Development</Link>
-    <Link to="/app-development">App Development</Link>
-    <Link to="/cyber-security">Cyber Security</Link>
-    <Link to="/networking">Networking</Link>
-    <Link to="/data-management">Data Management</Link>
-  </div>
-</div>
+          {/* Desktop Services Dropdown */}
+          <div className="dropdown">
+            <span className="dropbtn" style={{color:"#ddd"}}>Services ▾</span>
+            <div className="dropdown-content">
+              <Link to="/digital-transformation">Digital Transformation</Link>
+              <Link to="/software-development">Software Development</Link>
+              <Link to="/app-development">App Development</Link>
+              <Link to="/cyber-security">Cyber Security</Link>
+              <Link to="/networking">Networking</Link>
+              <Link to="/data-management">Data Management</Link>
+            </div>
+          </div>
+
           <Link to="/Academia">Academia</Link>
           <Link to="/pro">Prod-Kit</Link>
-        {/* <div className="dropdown-container">
-  <Link to="/industries">Industries ▾</Link>
 
-  <div className="dropdown-menu">
-    <Link to="/industries/it">Information Technology</Link>
-    <Link to="/industries/healthcare">Health Care</Link>
-    <Link to="/industries/banking">Banking</Link>
-    <Link to="/industries/finance">Finance</Link>
-    <Link to="/industries/education">Education</Link>
-    <Link to="/industries/retail">Retail</Link>
-    <Link to="/industries/manufacturing">Manufacturing</Link>
-    <Link to="/industries/ecommerce">E-Commerce</Link>
-    <Link to="/industries/logistics">Logistics</Link>
-  </div>
-</div> */}<div className="dropdown-industries">
-  <span className="dropbtn-industries" style={{color:"#ddd"}}>Industries ▾</span>
-
-  <div className="dropdown-content-industries">
-    <Link to="/industries/it">Information Technology</Link>
-    <Link to="/industries/healthcare">Health Care</Link>
-    <Link to="/industries/banking">Banking</Link>
-    <Link to="/industries/finance">Finance</Link>
-    <Link to="/industries/education">Education</Link>
-    <Link to="/industries/retail">Retail</Link>
-    <Link to="/industries/manufacturing">Manufacturing</Link>
-    <Link to="/industries/ecommerce">E-Commerce</Link>
-    <Link to="/industries/logistics">Logistics</Link>
-  </div>
-</div>
+          {/* Desktop Industries Dropdown */}
+          <div className="dropdown-industries">
+            <span className="dropbtn-industries"  style={{color:"#ddd"}}>Industries ▾</span>
+            <div className="dropdown-content-industries">
+              <Link to="/industries/it">Information Technology</Link>
+              <Link to="/industries/healthcare">Health Care</Link>
+              <Link to="/industries/banking">Banking</Link>
+              <Link to="/industries/finance">Finance</Link>
+              <Link to="/industries/education">Education</Link>
+              <Link to="/industries/retail">Retail</Link>
+              <Link to="/industries/manufacturing">Manufacturing</Link>
+              <Link to="/industries/ecommerce">E-Commerce</Link>
+              <Link to="/industries/logistics">Logistics</Link>
+            </div>
+          </div>
 
           <Link to="/contact">Contact</Link>
         </nav>
 
         {/* Mobile Menu Icon */}
-        <div
-          className="mobile-menu-icon"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
+        <div className="mobile-menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
           <IoMdMenu />
         </div>
 
@@ -107,14 +96,63 @@ const Navbar2 = () => {
         </div>
       </header>
 
-      {/* Mobile Dropdown */}
+      {/* ------------------ MOBILE MENU ------------------ */}
       <div className={`mobile-dropdown ${menuOpen ? "show-menu" : ""}`}>
         <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
         <Link to="/about" onClick={() => setMenuOpen(false)}>About Us</Link>
-        <Link to="/service" onClick={() => setMenuOpen(false)}>Services</Link>
+
+        {/* === MOBILE SERVICES SECTION === */}
+        <div className="mobile-parent" onClick={() => toggleSubmenu("services")} >
+         Services
+          <span
+            className={`arrow ${activeSubmenu === "services" ? "rotate" : ""}`}
+          >
+            ▶
+          </span>
+        </div>
+
+        <div
+          className={`mobile-submenu ${
+            activeSubmenu === "services" ? "show-submenu" : ""
+          }`}
+        >
+          <Link to="/digital-transformation">Digital Transformation</Link>
+          <Link to="/software-development">Software Development</Link>
+          <Link to="/app-development">App Development</Link>
+          <Link to="/cyber-security">Cyber Security</Link>
+          <Link to="/networking">Networking</Link>
+          <Link to="/data-management">Data Management</Link>
+        </div>
+
         <Link to="/Academia" onClick={() => setMenuOpen(false)}>Academia</Link>
         <Link to="/pro" onClick={() => setMenuOpen(false)}>Prod-Kit</Link>
-        <Link to="/industries" onClick={() => setMenuOpen(false)}>Industries</Link>
+
+        {/* === MOBILE INDUSTRIES SECTION === */}
+        <div className="mobile-parent" onClick={() => toggleSubmenu("industries")}>
+          Industries
+          <span
+            className={`arrow ${activeSubmenu === "industries" ? "rotate" : ""}`}
+          >
+            ▶
+          </span>
+        </div>
+
+        <div
+          className={`mobile-submenu ${
+            activeSubmenu === "industries" ? "show-submenu" : ""
+          }`}
+        >
+          <Link to="/industries/it">Information Technology</Link>
+          <Link to="/industries/healthcare">Health Care</Link>
+          <Link to="/industries/banking">Banking</Link>
+          <Link to="/industries/finance">Finance</Link>
+          <Link to="/industries/education">Education</Link>
+          <Link to="/industries/retail">Retail</Link>
+          <Link to="/industries/manufacturing">Manufacturing</Link>
+          <Link to="/industries/ecommerce">E-Commerce</Link>
+          <Link to="/industries/logistics">Logistics</Link>
+        </div>
+
         <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
       </div>
     </>

@@ -515,3 +515,68 @@ height: 36px;
    background: #0A0D1F;
   /* background: inherit; Keeps the same background you already have */
 }
+/* code for the dropdown in the phone  */
+/* ==========================================================
+   MOBILE INDUSTRIES + SERVICES DROPDOWN (NO CHANGES ABOVE)
+   ========================================================== */
+
+/* Hide all dropdowns inside mobile menu by default */
+.mobile-dropdown .mobile-submenu {
+  display: none;
+  flex-direction: column;
+  background: #111a33;
+  padding: 12px 18px;
+  border-left: 3px solid #0095ff;
+  border-radius: 6px;
+  gap: 12px;
+}
+
+/* Show submenu when active */
+.mobile-dropdown .mobile-submenu.show-submenu {
+  display: flex;
+}
+
+/* Parent buttons */
+.mobile-dropdown .mobile-parent {
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 0;
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-dropdown .mobile-parent:hover {
+  color: #00aaff;
+}
+
+/* Child links */
+.mobile-dropdown .mobile-submenu a {
+  font-size: 17px;
+  color: #ddd;
+  padding-left: 10px;
+  text-decoration: none;
+}
+
+.mobile-dropdown .mobile-submenu a:hover {
+  color: #00aaff;
+}
+
+/* Expand arrow */
+.mobile-dropdown .arrow {
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.mobile-dropdown .arrow.rotate {
+  transform: rotate(90deg);
+}
+
+/* Mobile only */
+@media (min-width: 769px) {
+  .mobile-dropdown {
+    display: none !important;
+  }
+}
