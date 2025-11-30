@@ -432,7 +432,7 @@
   }
   
   .slider-services-container {
-    right: 20px;
+    right: -30px !important;
     bottom: 20px;
     gap: 8px;
   }
