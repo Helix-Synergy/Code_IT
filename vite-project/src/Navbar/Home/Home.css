@@ -149,6 +149,112 @@ height: 36px;
 .goog-te-gadget span {
   display: none !important;
 }
+/* Dropdown wrapper */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Text button */
+.dropbtn {
+  cursor: pointer;
+  padding: 10px 15px;
+  color: #000;
+  font-size: 18px;
+
+}
+
+/* Dropdown box */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 12px 0;
+  border-radius: 10px;
+  min-width: 220px;
+  z-index: 10000;
+  backdrop-filter: blur(3px);
+}
+
+/* Items inside dropdown */
+.dropdown-content a {
+  display: block;
+  padding: 12px 20px;
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Show on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change arrow color when active */
+.dropdown:hover .dropbtn {
+  color: #000;
+}
+/* Industries code  */
+/* =============== INDUSTRIES DROPDOWN =============== */
+/* =============== INDUSTRIES DROPDOWN (Same Style as Services) =============== */
+.dropdown-industries {
+  position: relative;
+  display: inline-block;
+  
+}
+
+.dropbtn-industries {
+  cursor: pointer;
+  padding: 10px 15px;
+  color: #000;
+  font-size: 18px;
+}
+
+/* Dropdown box */
+.dropdown-content-industries {
+  display: none;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 12px 0;
+  border-radius: 10px;
+  min-width: 240px;
+  z-index: 10000;
+  backdrop-filter: blur(3px);
+}
+
+/* Items inside dropdown */
+.dropdown-content-industries a {
+  display: block;
+  padding: 12px 20px;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  color: #ddd;
+}
+
+.dropdown-content-industries a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Show dropdown on hover */
+.dropdown-industries:hover .dropdown-content-industries {
+  display: block;
+}
+
+/* Arrow or text color when active */
+.dropdown-industries:hover .dropbtn-industries {
+  color: #000;
+}
+
+
 /* ============================
    MEDIA QUERIES (BEST PRACTICE)
    ============================ */

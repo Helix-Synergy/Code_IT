@@ -44,10 +44,51 @@ const Navbar2 = () => {
         <nav className="home-nav">
           <Link to="/">Home</Link>
           <Link to="/about">About Us</Link>
-          <Link to="/service">Services</Link>
+          {/* <Link to="/service">Services</Link> */}
+          <div className="dropdown">
+  <span className="dropbtn" style={{color:"#ddd"}}>Services ▾</span>
+
+  <div className="dropdown-content">
+    <Link to="/digital-transformation">Digital Transformation</Link>
+    <Link to="/software-development">Software Development</Link>
+    <Link to="/app-development">App Development</Link>
+    <Link to="/cyber-security">Cyber Security</Link>
+    <Link to="/networking">Networking</Link>
+    <Link to="/data-management">Data Management</Link>
+  </div>
+</div>
           <Link to="/Academia">Academia</Link>
           <Link to="/pro">Prod-Kit</Link>
-          <Link to="/industries">Industries</Link>
+        {/* <div className="dropdown-container">
+  <Link to="/industries">Industries ▾</Link>
+
+  <div className="dropdown-menu">
+    <Link to="/industries/it">Information Technology</Link>
+    <Link to="/industries/healthcare">Health Care</Link>
+    <Link to="/industries/banking">Banking</Link>
+    <Link to="/industries/finance">Finance</Link>
+    <Link to="/industries/education">Education</Link>
+    <Link to="/industries/retail">Retail</Link>
+    <Link to="/industries/manufacturing">Manufacturing</Link>
+    <Link to="/industries/ecommerce">E-Commerce</Link>
+    <Link to="/industries/logistics">Logistics</Link>
+  </div>
+</div> */}<div className="dropdown-industries">
+  <span className="dropbtn-industries" style={{color:"#ddd"}}>Industries ▾</span>
+
+  <div className="dropdown-content-industries">
+    <Link to="/industries/it">Information Technology</Link>
+    <Link to="/industries/healthcare">Health Care</Link>
+    <Link to="/industries/banking">Banking</Link>
+    <Link to="/industries/finance">Finance</Link>
+    <Link to="/industries/education">Education</Link>
+    <Link to="/industries/retail">Retail</Link>
+    <Link to="/industries/manufacturing">Manufacturing</Link>
+    <Link to="/industries/ecommerce">E-Commerce</Link>
+    <Link to="/industries/logistics">Logistics</Link>
+  </div>
+</div>
+
           <Link to="/contact">Contact</Link>
         </nav>
 
