@@ -313,7 +313,7 @@
   
   .slider-services-container {
     right: 40px;
-    bottom: 40px;
+    bottom: -240px !important;
     gap: 12px;
   }
   

@@ -1,4 +1,4 @@
-/* Existing reset kept same */
+
 * {
   margin: 0;
   padding: 0;
@@ -31,6 +31,8 @@ html, body, #root {
 
 /* Updated Logo Size */
 .logo img {
+  margin-top: 10px;
+  margin-left: 20px;
   width: 160px;          /* Perfect width */
   height: auto;          /* No crop */
   object-fit: contain;   /* Fit inside */
@@ -38,6 +40,7 @@ html, body, #root {
 
 /* Navbar Links */
 .home-nav {
+  margin-top: 10px;
   display: flex;
   gap: 28px;
 }
@@ -62,12 +65,14 @@ html, body, #root {
 
 /* Google Translate Box */
 .translate-box {
+  transform: scale(0.85);
   background: white;
   padding: 4px 8px;
   border-radius: 6px;
-  height: 32px;
+height: 36px;
   display: flex;
   align-items: center;
+  margin-top: 10px;
 }
 
 /* Contact Number Button */
@@ -79,6 +84,7 @@ html, body, #root {
   color: white;
   font-size: 16px;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 .call-btn:hover {
@@ -142,4 +148,264 @@ html, body, #root {
 .goog-logo-link,
 .goog-te-gadget span {
   display: none !important;
+}
+/* ============================
+   MEDIA QUERIES (BEST PRACTICE)
+   ============================ */
+
+/* ---------- Large Laptop (1440px ↓) ---------- */
+@media (max-width: 1440px) {
+  .home-section {
+    padding: 20px 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 50px;
+  }
+}
+
+/* ---------- Laptop (1024px ↓) ---------- */
+@media (max-width: 1024px) {
+  .home-header {
+    padding-bottom: 20px;
+  }
+
+  .home-nav a {
+    font-size: 16px;
+  }
+
+  .hero-content h1 {
+    font-size: 45px;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+  }
+}
+
+/* ---------- Tablet (768px ↓) ---------- */
+@media (max-width: 768px) {
+  .home-header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .home-nav {
+    gap: 20px;
+  }
+
+  .home-nav a {
+    font-size: 16px;
+  }
+
+  .right-section {
+    gap: 12px;
+  }
+
+  /* .call-btn {
+    padding: 8px 20px;
+    font-size: 15px;
+  } */
+
+  .hero-content h1 {
+    font-size: 40px;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+  }
+}
+
+/* ---------- Mobile (600px ↓) ---------- */
+@media (max-width: 600px) {
+  .home-section {
+    padding: 20px;
+  }
+
+  .logo img {
+    width: 130px;
+    margin-top: 20px !important;
+  }
+
+  .home-nav {
+    display: none; /* Hide nav for small screens */
+  }
+
+  .hero-content {
+    margin-top: 50px;
+  }
+
+  .hero-content h1 {
+    font-size: 34px;
+    line-height: 1.3;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .hero-btn {
+    padding: 12px 22px;
+    font-size: 16px;
+  }
+}
+
+/* ---------- Extra Small Mobile (400px ↓) ---------- */
+@media (max-width: 400px) {
+  .logo img {
+    width: 110px;
+  }
+
+  .hero-content h1 {
+    font-size: 30px;
+  }
+
+  .call-btn {
+    padding: 6px 16px;
+    font-size: 14px;
+  }
+
+  .translate-box {
+    transform: scale(0.9);
+  }
+}
+/* ============================
+      MOBILE MENU ICON
+   ============================ */
+.mobile-menu-icon {
+  display: none;
+  font-size: 47px;
+  color: white;
+  cursor: pointer;
+  margin-top: -94px;
+  margin-left: 270px;
+}
+
+/* ============================
+      MOBILE DROPDOWN MENU
+   ============================ */
+.mobile-dropdown {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  background: #0f172a;
+  padding: 25px 30px;
+  border-radius: 10px;
+  margin-top: 15px;
+  border: 1px solid #222;
+}
+
+.mobile-dropdown a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.mobile-dropdown a:hover {
+  color: #00aaff;
+}
+
+/* ----------------------------------------------------
+   MEDIA QUERIES (Laptop → Tablet → Mobile)
+   ---------------------------------------------------- */
+
+/* ---------- Laptop (1024px ↓) ---------- */
+@media (max-width: 1024px) {
+  .home-section {
+    padding: 20px 40px;
+  }
+}
+
+/* ---------- Tablet (768px ↓) ---------- */
+@media (max-width: 768px) {
+
+  /* Hide desktop nav */
+  .home-nav {
+    display: none;
+  }
+
+  /* Show menu icon */
+  .mobile-menu-icon {
+    display: block;
+  }
+
+  /* Let header adjust */
+  .home-header {
+    justify-content: space-between;
+  }
+}
+
+/* ---------- Mobile (600px ↓) ---------- */
+@media (max-width: 600px) {
+
+  /* Show dropdown if active */
+  .mobile-dropdown.show-menu {
+    display: flex;
+  }
+
+  .logo img {
+    width: 130px;
+    margin-left: -170px;
+  }
+
+  .call-btn {
+    padding: 8px 20px;
+    font-size: 15px;
+  }
+}
+
+/* ---------- Extra Small Mobile (400px ↓) ---------- */
+@media (max-width: 400px) {
+  .logo img {
+    width: 110px;
+  }
+}
+/* ===============================
+   REMOVE CALL & TRANSLATE ON TABLET + MOBILE
+   =============================== */
+
+/* Tablet and below (768px ↓) */
+@media (max-width: 768px) {
+  .call-btn {
+    display: none !important;
+  }
+  .translate-box {
+    display: none !important;
+  }
+
+  /* Adjust right-section spacing */
+  .right-section {
+    gap: 0px;
+  }
+}
+
+/* Mobile (600px ↓) */
+@media (max-width: 600px) {
+  .call-btn {
+    display: none !important;
+  }
+
+  .translate-box {
+    display: none !important;
+  }
+}
+
+/* Extra small mobile (400px ↓) */
+@media (max-width: 400px) {
+  .call-btn {
+    display: none !important;
+  }
+
+  .translate-box {
+    display: none !important;
+  }
+}
+
+
+.home-header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+   background: #0A0D1F;
+  /* background: inherit; Keeps the same background you already have */
 }

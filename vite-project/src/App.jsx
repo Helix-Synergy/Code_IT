@@ -8,12 +8,13 @@ import Industries from "./Navbar/Industries.jsx";
 import Contact from "./Navbar/Contact.jsx";
 import { Routes, Route } from "react-router-dom";
 import Footer from "./Components/Footer/Footer.jsx";
+import Navbar2 from "./Navbar/Navbar2/Navbar2.jsx";
 
 const App = () => {
   return (
     <div>
       {/* <Home/> */}
-
+<Navbar2/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
