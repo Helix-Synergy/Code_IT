@@ -39,7 +39,7 @@ const Navbar2 = () => {
         {/* Logo Section */}
         <div className="logo">
           <img
-            src="/Images/WhatsApp Image 2025-11-27 at 14.02.01_88f46c57.jpg"
+            src="/Images/Header-Final-Logo.webp"
             alt="Logo"
           />
         </div>

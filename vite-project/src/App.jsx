@@ -9,12 +9,13 @@ import Contact from "./Navbar/Contact.jsx";
 import { Routes, Route } from "react-router-dom";
 import Footer from "./Components/Footer/Footer.jsx";
 import Navbar2 from "./Navbar/Navbar2/Navbar2.jsx";
+import It from "./Components/IT/It.jsx";
 
 const App = () => {
   return (
     <div>
       {/* <Home/> */}
-<Navbar2/>
+      <Navbar2 />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -23,6 +24,16 @@ const App = () => {
         <Route path="/pro" element={<Pro />}></Route>
         <Route path="/industries" element={<Industries />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
+        {/* Routing of the Indurstries */}
+        <Route path="/industries/it" element={<It />}></Route>
+        <Route path="/industries/healthcare" element={<It />}></Route>
+        <Route path="/industries/banking" element={<It />}></Route>
+        <Route path="/industries/finance" element={<It />}></Route>
+        <Route path="/industries/education" element={<It />}></Route>
+        <Route path="/industries/retail" element={<It />}></Route>
+         <Route path="/industries/manufacturing" element={<It />}></Route>
+        <Route path="/industries/ecommerce" element={<It />}></Route>
+        <Route path="/industries/logistics"element={<It />}></Route>
       </Routes>
 
       <Footer />
