@@ -6,8 +6,27 @@ import { FaLinkedin } from "react-icons/fa6";
 import { LuMail } from "react-icons/lu";
 import { BsSend } from "react-icons/bs";
 import "./Footer.css";
-
+import { useNavigate } from 'react-router-dom';
 const Footer = () => {
+const navigate=useNavigate()
+ const  HandleAbout=()=>{
+navigate("/about")
+ }
+const HandlesService=()=>{
+navigate("/service")
+}
+const HandleIndu=()=>{
+  navigate("/Academia")
+}
+const HandlePr=()=>{
+  navigate("/pro")
+}
+const HandleCont=()=>{
+  navigate("/contact")
+}
+const HandleDigi=()=>{
+  navigate("/digital-transformation")
+}
   return (
     <div className="footer-container">
 
@@ -30,24 +49,24 @@ const Footer = () => {
 
       {/* -------- SERVICES -------- */}
       <div className="footer-col">
-        <h2>Service</h2>
-        <h6>Digital Transformation</h6>
-        <h6>Software Development</h6>
-        <h6>App Development</h6>
-        <h6>Cyber Security</h6>
-        <h6>Networking</h6>
-        <h6>Data Management</h6>
+        <h2 >Service</h2>
+        <h6 onClick={HandleDigi}>Digital Transformation</h6>
+        <h6 onClick={HandleDigi}>Software Development</h6>
+        <h6 onClick={HandleDigi}>App Development</h6>
+        <h6 onClick={HandleDigi}>Cyber Security</h6>
+        <h6 onClick={HandleDigi}>Networking</h6>
+        <h6 onClick={HandleDigi}>Data Management</h6>
       </div>
 
       {/* -------- COMPANY -------- */}
       <div className="footer-col">
         <h2>Company</h2>
         <h6>Home</h6>
-        <h6>About Us</h6>
-        <h6>Services</h6>
-        <h6>Industries</h6>
-        <h6>Products</h6>
-        <h6>Contact</h6>
+        <h6 onClick={HandleAbout}>About Us</h6>
+        <h6 onClick={HandlesService}>Services</h6>
+        <h6 onClick={HandleIndu}>Industries</h6>
+        <h6 onClick={HandlePr}>Products</h6>
+        <h6  onClick={HandleCont}>Contact</h6>
       </div>
 
       {/* -------- NEWSLETTER -------- */}

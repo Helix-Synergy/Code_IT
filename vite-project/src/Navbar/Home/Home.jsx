@@ -11,6 +11,10 @@ import AboutCode from "../../Components/AboutCode/AboutCode.jsx";
 
 // Menu Icon
 import { IoMdMenu } from "react-icons/io";
+import InnoSolutions from "../../Components/InnoSolutions/InnoSolutions.jsx";
+import Contact2 from "../../Components/Contact2/Contact2.jsx";
+import Bussiness from "../../Components/Bussiness/Bussiness.jsx";
+import OurServices from "../../Components/OurServices/OurServices.jsx";
 
 const Home = () => {
   return (
@@ -20,7 +24,11 @@ const Home = () => {
       <Innovations />
       <Vision />
       <AboutCode />
+      <OurServices/>
+      <Bussiness/>
+      <InnoSolutions/>
       <Technologies />
+      <Contact2/>
       <Marquee1 />
     </div>
   );

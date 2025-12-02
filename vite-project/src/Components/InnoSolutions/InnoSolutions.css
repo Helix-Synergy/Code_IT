@@ -1,0 +1,394 @@
+.inno-solutions {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  padding: 60px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header Styles */
+.inno-header {
+  margin-bottom: 60px;
+}
+
+.inno-subtitle {
+  color: #666;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.inno-title-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inno-title {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.inno-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  max-width: 600px;
+  margin: 0;
+}
+
+/* Solutions Container */
+.solutions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Tabs Styles */
+.solution-tabs {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.solution-tab {
+  flex: 1;
+  min-width: 200px;
+  padding: 25px 30px;
+  background-color: var(--bg-color);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.solution-tab:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.solution-tab.active {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+.tab-number {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.solution-tab.active .tab-number {
+  color: rgba(0, 0, 0, 0.25);
+  font-size: 56px;
+}
+
+.tab-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.solution-tab.active .tab-title {
+  color: #000;
+  font-weight: 700;
+}
+
+/* Main Display Styles */
+.solution-main-display {
+  border-radius: 16px;
+  overflow: hidden;
+  height: 600px;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.solution-main-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.main-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
+  z-index: 1;
+}
+
+.solution-main-content {
+  position: relative;
+  z-index: 2;
+  padding: 60px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  max-width: 600px;
+}
+
+.main-number {
+  font-size: 120px;
+  font-weight: 800;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.15);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.main-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0 0 30px 0;
+  line-height: 1.2;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.main-description {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0.9;
+  max-width: 500px;
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+  .inno-solutions {
+    padding: 40px 20px;
+  }
+
+  .inno-title {
+    font-size: 36px;
+  }
+
+  .solution-tab {
+    min-width: 160px;
+    padding: 20px 25px;
+  }
+
+  .tab-number {
+    font-size: 40px;
+  }
+
+  .solution-tab.active .tab-number {
+    font-size: 48px;
+  }
+
+  .tab-title {
+    font-size: 16px;
+  }
+
+  .solution-main-display {
+    height: 500px;
+  }
+
+  .solution-main-content {
+    padding: 40px;
+  }
+
+  .main-number {
+    font-size: 100px;
+  }
+
+  .main-title {
+    font-size: 36px;
+  }
+
+  .main-description {
+    font-size: 16px;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .inno-solutions {
+    padding: 30px 15px;
+  }
+
+  .inno-header {
+    margin-bottom: 40px;
+  }
+
+  .inno-subtitle {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+
+  .inno-title {
+    font-size: 28px;
+  }
+
+  .inno-title-container {
+    gap: 15px;
+  }
+
+  .inno-description {
+    font-size: 15px;
+  }
+
+  .solution-tabs {
+    gap: 10px;
+  }
+
+  .solution-tab {
+    min-width: calc(50% - 10px);
+    padding: 15px 20px;
+    gap: 15px;
+  }
+
+  .tab-number {
+    font-size: 32px;
+  }
+
+  .solution-tab.active .tab-number {
+    font-size: 36px;
+  }
+
+  .tab-title {
+    font-size: 14px;
+  }
+
+  .solution-main-display {
+    height: 400px;
+  }
+
+  .solution-main-content {
+    padding: 30px;
+  }
+
+  .main-number {
+    font-size: 80px;
+    margin-bottom: 15px;
+  }
+
+  .main-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .main-description {
+    font-size: 15px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .inno-title {
+    font-size: 24px;
+  }
+
+  .solution-tab {
+    min-width: 100%;
+    padding: 12px 15px;
+    gap: 12px;
+  }
+
+  .tab-number {
+    font-size: 28px;
+  }
+
+  .solution-tab.active .tab-number {
+    font-size: 32px;
+  }
+
+  .tab-title {
+    font-size: 13px;
+  }
+
+  .solution-main-display {
+    height: 350px;
+  }
+
+  .solution-main-content {
+    padding: 20px;
+  }
+
+  .main-number {
+    font-size: 60px;
+    margin-bottom: 10px;
+  }
+
+  .main-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .main-description {
+    font-size: 14px;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+  .inno-solutions {
+    padding: 80px 40px;
+  }
+
+  .inno-title {
+    font-size: 48px;
+  }
+
+  .solution-tabs {
+    gap: 30px;
+  }
+
+  .solution-tab {
+    padding: 30px 35px;
+    gap: 25px;
+  }
+
+  .tab-number {
+    font-size: 56px;
+  }
+
+  .solution-tab.active .tab-number {
+    font-size: 64px;
+  }
+
+  .tab-title {
+    font-size: 20px;
+  }
+
+  .solution-main-display {
+    height: 700px;
+  }
+
+  .solution-main-content {
+    padding: 80px;
+  }
+
+  .main-number {
+    font-size: 140px;
+  }
+
+  .main-title {
+    font-size: 56px;
+  }
+
+  .main-description {
+    font-size: 20px;
+  }
+}

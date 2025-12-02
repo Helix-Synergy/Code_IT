@@ -1,0 +1,340 @@
+/* It.css - Updated for proper alternating layout */
+
+.it-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+/* Hero Section */
+.it-hero {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 30px 0 60px 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.it-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+}
+
+.it-hero h1 {
+  color: white;
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  letter-spacing: 2px;
+}
+
+/* Industry Sections - FIXED for proper alternating */
+.it-section {
+  display: flex;
+  align-items: stretch; /* Changed from center to stretch for equal height */
+  justify-content: space-between;
+  margin-bottom: 80px;
+  gap: 40px;
+  padding: 30px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-direction: row; /* Explicitly set default */
+  min-height: 400px; /* Minimum height for consistency */
+}
+
+.it-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Reverse class for alternating sections */
+.it-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.it-text {
+  flex: 1;
+  padding: 20px; /* Increased padding */
+  min-width: 0; /* Fix for text overflow */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+}
+
+.it-text h1 {
+  font-size: 2.3rem;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 4px solid #3498db;
+  position: relative;
+}
+
+.it-text h1::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: #e74c3c;
+}
+
+/* For reverse sections, align the underline to the right */
+.it-section.reverse .it-text h1::after {
+  left: auto;
+  right: 0;
+}
+
+.it-text p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #555;
+  text-align: justify;
+  margin-bottom: 10px;
+  word-wrap: break-word; /* Ensure text doesn't overflow */
+}
+
+.it-img-box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Increased padding */
+  min-width: 0; /* Fix for image container */
+}
+
+.it-img-box img {
+  width: 100%;
+  max-width: 500px;
+  height: 100%; /* Changed from auto to 100% for consistency */
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  object-fit: cover;
+  min-height: 300px;
+  max-height: 400px; /* Consistent height */
+}
+
+.it-img-box img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Tablet Styles (768px - 1024px) */
+@media (max-width: 1024px) {
+  .it-hero {
+    height: 350px;
+    margin: 25px 0 50px 0;
+  }
+  
+  .it-hero h1 {
+    font-size: 3rem;
+  }
+  
+  .it-section {
+    margin-bottom: 70px;
+    gap: 35px;
+    padding: 25px;
+    min-height: 350px;
+  }
+  
+  .it-text h1 {
+    font-size: 2.1rem;
+  }
+  
+  .it-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .it-img-box img {
+    max-width: 450px;
+    min-height: 280px;
+    max-height: 350px;
+  }
+}
+
+/* Large Mobile (576px - 768px) - Stack all sections vertically */
+@media (max-width: 768px) {
+  .it-container {
+    padding: 0 10px;
+  }
+  
+  .it-hero {
+    height: 300px;
+    margin: 20px 0 40px 0;
+  }
+  
+  .it-hero h1 {
+    font-size: 2.5rem;
+    padding: 15px;
+  }
+  
+  /* Stack ALL sections vertically on mobile */
+  .it-section {
+    flex-direction: column !important; /* Override both normal and reverse */
+    margin-bottom: 60px;
+    gap: 30px;
+    padding: 20px;
+    min-height: auto;
+  }
+  
+  .it-section.reverse {
+    flex-direction: column !important; /* Ensure reverse also stacks */
+  }
+  
+  .it-text {
+    width: 100%;
+    padding: 10px 0;
+    order: 1; /* Text first on mobile */
+  }
+  
+  .it-text h1 {
+    font-size: 1.9rem;
+    text-align: center;
+    padding-bottom: 12px;
+  }
+  
+  .it-text h1::after {
+    left: 50% !important; /* Center underline on mobile */
+    right: auto !important;
+    transform: translateX(-50%);
+  }
+  
+  .it-text p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: left;
+  }
+  
+  .it-img-box {
+    width: 100%;
+    padding: 10px 0;
+    order: 2; /* Image after text on mobile */
+  }
+  
+  .it-img-box img {
+    max-width: 400px;
+    min-height: 250px;
+    max-height: 300px;
+    height: auto; /* Reset height for mobile */
+  }
+}
+
+/* Small Mobile (up to 576px) */
+@media (max-width: 576px) {
+  .it-hero {
+    height: 250px;
+    margin: 15px 0 30px 0;
+  }
+  
+  .it-hero h1 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+  
+  .it-section {
+    margin-bottom: 50px;
+    padding: 15px;
+    gap: 25px;
+  }
+  
+  .it-text h1 {
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+  }
+  
+  .it-text p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .it-img-box img {
+    max-width: 100%;
+    min-height: 200px;
+    max-height: 250px;
+    border-radius: 8px;
+  }
+}
+
+/* Extra Small Mobile (up to 400px) */
+@media (max-width: 400px) {
+  .it-hero {
+    height: 200px;
+  }
+  
+  .it-hero h1 {
+    font-size: 1.7rem;
+  }
+  
+  .it-section {
+    padding: 12px;
+    margin-bottom: 40px;
+  }
+  
+  .it-text h1 {
+    font-size: 1.5rem;
+  }
+  
+  .it-text p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  
+  .it-img-box img {
+    min-height: 180px;
+    max-height: 220px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .it-section {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ddd;
+    min-height: auto;
+  }
+  
+  .it-section.reverse {
+    flex-direction: row !important; /* Keep normal layout for printing */
+  }
+  
+  .it-img-box img {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    height: auto;
+  }
+  
+  .it-hero {
+    background: #2c3e50 !important;
+    height: 200px;
+  }
+  
+  .it-hero h1 {
+    color: white !important;
+    text-shadow: none;
+  }
+}

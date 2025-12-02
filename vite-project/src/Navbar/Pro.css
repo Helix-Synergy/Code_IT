@@ -1,0 +1,395 @@
+/* Pro.css */
+
+/* Base Styles */
+.pro-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  color: white;
+}
+
+/* Hero Banner - ONLY CHANGE THE HEIGHT */
+.hero-banner {
+  background-image: url('/Images1/Prod/prod-kit-banner.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 320px; /* CHANGED: Reduced from 400px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+/* Hero Banner Title - ONLY CHANGE THE FONT SIZE */
+.hero-banner h1 {
+  font-size: 2.8rem; /* CHANGED: Reduced from 3.5rem */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+/* Section Titles - ONLY CHANGE THE FONT SIZE */
+.intro-content h1,
+.product-content h1 {
+  font-size: 2rem; /* CHANGED: Reduced from 2.5rem */
+  margin-bottom: 20px;
+  color: white;
+}
+
+/* Paragraph Text - ONLY CHANGE THE FONT SIZE */
+.intro-content p,
+.product-content p {
+  font-size: 0.95rem; /* CHANGED: Reduced from 1.1rem */
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: white;
+}
+
+/* List Items - ONLY CHANGE THE FONT SIZE */
+.features-list li {
+  padding: 8px 0;
+  font-size: 0.9rem; /* CHANGED: Reduced from 1rem */
+  color: white;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* List Icon - ONLY CHANGE THE FONT SIZE */
+.list-icon {
+  color: #28a745;
+  font-size: 1rem; /* CHANGED: Reduced from 1.2rem */
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Button - ONLY CHANGE THE FONT SIZE */
+.cta-button {
+  background-color: #007bff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem; /* CHANGED: Reduced from 1.1rem */
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+/* Footer Section Titles - ONLY CHANGE THE FONT SIZE */
+.footer-section h2 {
+  font-size: 1.8rem; /* CHANGED: Reduced from 2.2rem */
+  margin-bottom: 15px;
+  color: white;
+}
+
+/* Footer Paragraph - ONLY CHANGE THE FONT SIZE */
+.footer-section p {
+  font-size: 0.95rem; /* CHANGED: Reduced from 1.1rem */
+  margin-bottom: 25px;
+  color: white;
+}
+
+/* Media Queries - ONLY UPDATING THE CHANGED VALUES */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .hero-banner {
+    height: 280px; /* CHANGED: Reduced from 350px */
+  }
+  
+  .hero-banner h1 {
+    font-size: 2.2rem; /* CHANGED: Reduced from 2.8rem */
+  }
+  
+  .intro-content h1,
+  .product-content h1 {
+    font-size: 1.7rem; /* CHANGED: Reduced from 2.2rem */
+  }
+}
+
+/* Mobile Landscape (576px - 767px) */
+@media (max-width: 767px) {
+  .hero-banner {
+    height: 220px; /* CHANGED: Reduced from 250px */
+  }
+  
+  .hero-banner h1 {
+    font-size: 1.6rem; /* CHANGED: Reduced from 2rem */
+    padding: 15px;
+  }
+  
+  .intro-content h1,
+  .product-content h1 {
+    font-size: 1.5rem; /* CHANGED: Reduced from 1.8rem */
+  }
+  
+  .intro-content p,
+  .product-content p {
+    font-size: 0.9rem; /* CHANGED: Reduced from 1rem */
+  }
+  
+  .cta-button {
+    font-size: 0.9rem; /* CHANGED: Reduced from 1rem */
+  }
+  
+  .footer-section h2 {
+    font-size: 1.5rem; /* CHANGED: Reduced from 1.8rem */
+  }
+  
+  .footer-section p {
+    font-size: 0.9rem; /* CHANGED: Reduced from 1rem */
+  }
+  
+  .features-list li {
+    font-size: 0.85rem; /* CHANGED: Reduced from 0.95rem */
+  }
+}
+
+/* Mobile Portrait (up to 575px) */
+@media (max-width: 575px) {
+  .hero-banner {
+    height: 180px; /* CHANGED: Reduced from 200px */
+  }
+  
+  .hero-banner h1 {
+    font-size: 1.3rem; /* CHANGED: Reduced from 1.6rem */
+    padding: 10px;
+  }
+  
+  .intro-content h1,
+  .product-content h1 {
+    font-size: 1.3rem; /* CHANGED: Reduced from 1.5rem */
+  }
+  
+  .footer-section h2 {
+    font-size: 1.3rem; /* CHANGED: Reduced from 1.6rem */
+  }
+  
+  .footer-section p {
+    font-size: 0.85rem; /* CHANGED: Reduced from 0.95rem */
+  }
+  
+  .features-list li {
+    font-size: 0.8rem; /* CHANGED: Reduced from 0.9rem */
+  }
+}
+
+/* Large Desktop (min-width: 1400px) */
+@media (min-width: 1400px) {
+  .hero-banner {
+    height: 380px; /* CHANGED: Reduced from 500px */
+  }
+  
+  .hero-banner h1 {
+    font-size: 3rem; /* CHANGED: Reduced from 4rem */
+  }
+  
+  .intro-content h1,
+  .product-content h1 {
+    font-size: 2.2rem; /* CHANGED: Reduced from 2.8rem */
+  }
+}
+
+/* Extra Small Devices (up to 375px) */
+@media (max-width: 375px) {
+  .hero-banner h1 {
+    font-size: 1.2rem; /* CHANGED: Reduced from 1.4rem */
+  }
+  
+  .intro-content h1,
+  .product-content h1 {
+    font-size: 1.1rem; /* CHANGED: Reduced from 1.3rem */
+  }
+  
+  .footer-section h2 {
+    font-size: 1.2rem; /* CHANGED: Reduced from 1.4rem */
+  }
+  
+  .footer-section p {
+    font-size: 0.8rem; /* CHANGED: Reduced from 0.9rem */
+  }
+  
+  .features-list li {
+    font-size: 0.75rem; /* CHANGED: Reduced from 0.85rem */
+  }
+}
+
+/* Everything below this line remains EXACTLY the same as your original code */
+.section {
+  margin: 60px 0;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.intro-section,
+.product-section {
+  flex-wrap: wrap;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.intro-content,
+.product-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.intro-image,
+.product-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.intro-image img,
+.product-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.features-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+.footer-section {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  margin: 40px 0;
+}
+
+/* CSS Checkmark Style */
+.checkmark {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: #28a745;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 24px;
+  margin-right: 10px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.features-list li {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+}
+
+@media (max-width: 1024px) {
+  .section {
+    gap: 30px;
+  }
+  
+  .footer-section {
+    padding: 35px 25px;
+    margin: 35px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .pro-container {
+    padding: 0 15px;
+  }
+  
+  .section {
+    flex-direction: column;
+    margin: 40px 0;
+    gap: 20px;
+  }
+  
+  .reverse {
+    flex-direction: column;
+  }
+  
+  .cta-button {
+    padding: 10px 25px;
+  }
+  
+  .footer-section {
+    padding: 30px 15px;
+    margin: 30px 0;
+  }
+  
+  .footer-section h2 {
+    margin-bottom: 15px;
+  }
+  
+  .footer-section p {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .footer-section {
+    padding: 25px 15px;
+    margin: 25px 0;
+    background-color: rgba(243, 238, 238, 0.7);
+  }
+  
+  .footer-section h2 {
+    margin-bottom: 12px;
+  }
+  
+  .footer-section p {
+    margin-bottom: 18px;
+  }
+  
+  .features-list li {
+    padding: 6px 0;
+  }
+}
+
+@media (min-width: 1400px) {
+  .pro-container {
+    max-width: 1600px;
+  }
+  
+  .footer-section {
+    padding: 50px 40px;
+    margin: 50px 0;
+  }
+}
+
+@media (max-width: 375px) {
+  .cta-button {
+    width: 100%;
+    padding: 12px 20px;
+  }
+  
+  .footer-section {
+    padding: 20px 12px;
+    margin: 20px 0;
+    background-color: rgba(213, 211, 211, 0.8);
+  }
+  
+  .footer-section h2 {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section p {
+    margin-bottom: 15px;
+  }
+  
+  .features-list li {
+    padding: 5px 0;
+  }
+}

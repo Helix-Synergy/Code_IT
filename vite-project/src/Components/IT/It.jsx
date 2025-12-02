@@ -1,19 +1,22 @@
 import React from "react";
+import "./It.css";
 
 const It = () => {
   return (
-    <div>
-      {/* Information Techonology */}
+    <div className="it-container">
+      {/* Hero Section */}
       <div
+        className="it-hero"
         style={{
-          backgroundImage: "url(../../../assets/Images/industries.webp)",
+          backgroundImage: "url(/Images1/industries.webp)",
         }}
       >
         <h1>Industries</h1>
       </div>
-      {/* Paragraph */}
-      <div style={{ display: "flex" }}>
-        <div>
+
+      {/* Information Technology - Image RIGHT, Text LEFT */}
+      <div className="it-section">
+        <div className="it-text">
           <h1>Information Technology</h1>
           <p>
             The IT industry drives CodeIT Consulting by offering cutting-edge
@@ -30,18 +33,17 @@ const It = () => {
             financial success in a tech-driven landscape.
           </p>
         </div>
-        <div>
-          <img src="../../../src/assets/Images/Information.avif" alt="" />
+        <div className="it-img-box">
+          <img src="/Images1/Information.avif" alt="Information Technology" />
         </div>
       </div>
-      {/* healthcare */}
-      <div style={{ display: "flex" }}>
-        {/* img */}
-        <div>
-          <img src="../../../src/assets/Images/health-care-img.webp" alt="" />
+
+      {/* Healthcare - Image LEFT, Text RIGHT (reverse) */}
+      <div className="it-section reverse">
+        <div className="it-img-box">
+          <img src="/Images1/health-care-img.webp" alt="Healthcare" />
         </div>
-        {/* para */}
-        <div>
+        <div className="it-text">
           <h1>Healthcare</h1>
           <p>
             Healthcare requires secure, interoperable IT for patient data and
@@ -59,10 +61,10 @@ const It = () => {
           </p>
         </div>
       </div>
-      {/* Banking */}
-      {/* para */}
-      <div style={{ display: "flex" }}>
-        <div>
+
+      {/* Banking - Image RIGHT, Text LEFT */}
+      <div className="it-section">
+        <div className="it-text">
           <h1>Banking</h1>
           <p>
             CodeIT Consulting's IT banking services revolutionize financial
@@ -78,18 +80,17 @@ const It = () => {
             and achieve financial success in a tech-driven landscape.
           </p>
         </div>
-        {/* image */}
-        <div>
-          <img src="../../../src/assets/Images/banking.webp" alt="" />
+        <div className="it-img-box">
+          <img src="/Images1/banking.webp" alt="Banking" />
         </div>
       </div>
-      {/* Finance */}
-      <div style={{ display: "flex" }}>
-        <div>
-          <img src="../../../src/assets/Images/finance-img.avif" alt="" />
+
+      {/* Finance - Image LEFT, Text RIGHT (reverse) */}
+      <div className="it-section reverse">
+        <div className="it-img-box">
+          <img src="/Images1/finance-img.avif" alt="Finance" />
         </div>
-        {/* para */}
-        <div>
+        <div className="it-text">
           <h1>Finance</h1>
           <p>
             CodeIT Consulting's IT finance services streamline and optimize
@@ -107,37 +108,35 @@ const It = () => {
           </p>
         </div>
       </div>
-      {/* Education */}
-      <div style={{ display: "flex" }}>
-        <div>
-          <div>
-            <h1>Education</h1>
-            <p>
-              IT education encompasses a variety of services aimed at empowering
-              individuals and organizations with the skills and knowledge needed
-              to thrive in the technology-driven world. Some specific services
-              include: Technical Training Programs,IT Certifications,Workshops
-              and Seminars,Custom Corporate Training,E-Learning Platforms,Coding
-              Bootcamps,Soft Skills for IT Professionals. The firm also delivers
-              robust risk management systems, cloud- based platforms, and
-              automated processes to enhance productivity. These innovative
-              services empower businesses to make informed decisions and achieve
-              financial success in a tech-driven landscape.
-            </p>
-          </div>
+
+      {/* Education - Image RIGHT, Text LEFT */}
+      <div className="it-section">
+        <div className="it-text">
+          <h1>Education</h1>
+          <p>
+            IT education encompasses a variety of services aimed at empowering
+            individuals and organizations with the skills and knowledge needed
+            to thrive in the technology-driven world. Some specific services
+            include: Technical Training Programs,IT Certifications,Workshops
+            and Seminars,Custom Corporate Training,E-Learning Platforms,Coding
+            Bootcamps,Soft Skills for IT Professionals. The firm also delivers
+            robust risk management systems, cloud- based platforms, and
+            automated processes to enhance productivity. These innovative
+            services empower businesses to make informed decisions and achieve
+            financial success in a tech-driven landscape.
+          </p>
         </div>
-        {/* img */}
-        <div>
-          <img src="../../../src/assets/Images/education-img.webp" alt="" />
+        <div className="it-img-box">
+          <img src="/Images1/education-img.webp" alt="Education" />
         </div>
       </div>
-      {/* Retail */}
-      <div style={{ display: "flex" }}>
-        <div>
-          <img src="../../../src/assets/Images/retail-img.webp" alt="" />
+
+      {/* Retail - Image LEFT, Text RIGHT (reverse) */}
+      <div className="it-section reverse">
+        <div className="it-img-box">
+          <img src="/Images1/retail-img.webp" alt="Retail" />
         </div>
-        {/* para */}
-        <div>
+        <div className="it-text">
           <h1>Retail</h1>
           <p>
             Retail demands agile IT solutions for e-commerce, inventory, and
@@ -152,44 +151,42 @@ const It = () => {
             well-informed choices, and enjoy a seamless retail experience in a
             fast-paced digital world. Discover exceptional products where
             quality meets affordability. From trendy fashion to everyday
-            essentials, we’ve got you covered. Shop online for convenience or
+            essentials, we've got you covered. Shop online for convenience or
             visit us in-store for a personalized touch. Simplifying shopping,
             one step at a time!
           </p>
         </div>
       </div>
-      {/* Manufucatring */}
-      <div style={{ display: "flex" }}>
-        <div>
-          <div>
-            <h1>Manufacturing</h1>
-            <p>
-              IT manufacturing typically involves a range of specialized
-              services aimed at designing, producing, and delivering
-              high-quality hardware solutions. Some specific services
-              include,Hardware Design and Prototyping,Component
-              Sourcing,Assembly and ProductionQuality Assurance and Testing
-              Customization and Configuration,Logistics and Supply Chain
-              Management: Maintenance and Support Services The firm also
-              delivers robust risk management systems, cloud- based platforms,
-              and automated processes to enhance productivity. These innovative
-              services empower businesses to make informed decisions and achieve
-              financial success in a tech-driven landscape.
-            </p>
-          </div>
+
+      {/* Manufacturing - Image RIGHT, Text LEFT */}
+      <div className="it-section">
+        <div className="it-text">
+          <h1>Manufacturing</h1>
+          <p>
+            IT manufacturing typically involves a range of specialized
+            services aimed at designing, producing, and delivering
+            high-quality hardware solutions. Some specific services
+            include,Hardware Design and Prototyping,Component
+            Sourcing,Assembly and ProductionQuality Assurance and Testing
+            Customization and Configuration,Logistics and Supply Chain
+            Management: Maintenance and Support Services The firm also
+            delivers robust risk management systems, cloud- based platforms,
+            and automated processes to enhance productivity. These innovative
+            services empower businesses to make informed decisions and achieve
+            financial success in a tech-driven landscape.
+          </p>
         </div>
-        {/* img */}
-        <div>
-          <img src="../../../src/assets/Images/manufacturing.avif" alt="" />
+        <div className="it-img-box">
+          <img src="/Images1/manufacturing.avif" alt="Manufacturing" />
         </div>
       </div>
-      {/* E-commerece */}
-      <div style={{ display: "flex" }}>
-        <div>
-          <img src="../../../src/assets/Images/ecommerece.webp" alt="" />
+
+      {/* E-commerce - Image LEFT, Text RIGHT (reverse) */}
+      <div className="it-section reverse">
+        <div className="it-img-box">
+          <img src="/Images1/ecommerece.webp" alt="e-Commerce" />
         </div>
-        {/* para */}
-        <div>
+        <div className="it-text">
           <h1>e-Commerce</h1>
           <p>
             e-Commerce thrives on seamless, scalable IT for online sales and
@@ -207,30 +204,28 @@ const It = () => {
           </p>
         </div>
       </div>
-      {/* Logistic */}
-      <div style={{ display: "flex" }}>
-        <div>
-          <div>
-            <h1>Logistics</h1>
-            <p>
-              The logistics industry plays a crucial role in CodeIT Consulting
-              by streamlining supply chains, ensuring seamless transportation,
-              and optimizing operational efficiency. It offers comprehensive
-              solutions like inventory management, warehousing, and distribution
-              to enhance business productivity. With a focus on innovation and
-              reliability, logistics services help clients achieve timely
-              delivery and cost-effective operations. This commitment drives
-              success and fosters sustainable growth. The firm also delivers
-              robust risk management systems, cloud- based platforms, and
-              automated processes to enhance productivity. These innovative
-              services empower businesses to make informed decisions and achieve
-              financial success in a tech-driven landscape.
-            </p>
-          </div>
+
+      {/* Logistics - Image RIGHT, Text LEFT */}
+      <div className="it-section">
+        <div className="it-text">
+          <h1>Logistics</h1>
+          <p>
+            The logistics industry plays a crucial role in CodeIT Consulting
+            by streamlining supply chains, ensuring seamless transportation,
+            and optimizing operational efficiency. It offers comprehensive
+            solutions like inventory management, warehousing, and distribution
+            to enhance business productivity. With a focus on innovation and
+            reliability, logistics services help clients achieve timely
+            delivery and cost-effective operations. This commitment drives
+            success and fosters sustainable growth. The firm also delivers
+            robust risk management systems, cloud- based platforms, and
+            automated processes to enhance productivity. These innovative
+            services empower businesses to make informed decisions and achieve
+            financial success in a tech-driven landscape.
+          </p>
         </div>
-        {/* img */}
-        <div>
-          <img src="../../../src/assets/Images/logistics.avif" alt="" />
+        <div className="it-img-box">
+          <img src="/Images1/logistics.avif" alt="Logistics" />
         </div>
       </div>
     </div>

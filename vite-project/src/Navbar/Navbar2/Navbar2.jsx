@@ -57,7 +57,7 @@ const Navbar2 = () => {
               <Link to="/software-development">Software Development</Link>
               <Link to="/app-development">App Development</Link>
               <Link to="/cyber-security">Cyber Security</Link>
-              <Link to="/networking">Networking</Link>
+              <Link to="/cyber-security">Networking</Link>
               <Link to="/data-management">Data Management</Link>
             </div>
           </div>
