@@ -16,11 +16,11 @@ const OurServices = () => {
           <h5>SOFTWARE DEVELOPMENT</h5>
         </div>
 
-        <div className="service-column" onClick={() => setActiveImage("../../../public/Images/InnoSolutions/app-development.avif")}>
+        <div className="service-column" onClick={() => setActiveImage("/Images/InnoSolutions/app-development.avif")}>
           <h5>APP DEVELOPMENT</h5>
         </div>
 
-        <div className="service-column" onClick={() => setActiveImage("../../../public/Images/InnoSolutions/cyber-security.avif")}>
+        <div className="service-column" onClick={() => setActiveImage("/Images/InnoSolutions/cyber-security.avif")}>
           <h5>CYBER SECURITY</h5>
         </div>
 
@@ -28,7 +28,7 @@ const OurServices = () => {
           <h5>NETWORKING</h5>
         </div>
 
-        <div className="service-column" onClick={() => setActiveImage("../../../public/Images/InnoSolutions/data-management.avif")}>
+        <div className="service-column" onClick={() => setActiveImage("/Images/InnoSolutions/data-management.avif")}>
           <h5>DATA MANAGEMENT</h5>
         </div>
       </div>
