@@ -17,7 +17,8 @@ const Services = () => {
       {/* Digital Transformation */}
       <div className="services-section services-section-reverse">
         <div className="services-img-box">
-          <img src="../../public/Images/digital-transformation.webp" alt="Digital Transformation" />
+      <img src="/Images/digital-transformation.webp" alt="Digital Transformation" />
+
         </div>
     
         <div className="services-text-content">
@@ -49,14 +50,16 @@ const Services = () => {
           </p>
         </div>
         <div className="services-img-box">
-          <img src="../../public/Images/software.webp" alt="Logistics" />
+      <img src="/Images/software.webp" alt="Logistics" />
+
         </div>
       </div>
       
       {/* App Development */}
       <div className="services-section services-section-reverse">
         <div className="services-img-box">
-          <img src="../../public/Images/app.webp" alt="App Development" />
+       <img src="/Images/app.webp" alt="App Development" />
+
         </div>
     
         <div className="services-text-content">
@@ -80,14 +83,16 @@ const Services = () => {
           </p>
         </div>
         <div className="services-img-box">
-          <img src="../../public/Images/cyber--security.avif" alt="Cyber Security" />
+       <img src="/Images/cyber--security.avif" alt="Cyber Security" />
+
         </div>
       </div>
       
       {/* Networking */}
       <div className="services-section services-section-reverse">
         <div className="services-img-box">
-          <img src="../../public/Images/network-people-digital-world_9975-23272.avif" alt="Networking" />
+    <img src="/Images/network-people-digital-world_9975-23272.avif" alt="Networking" />
+
         </div>
     
         <div className="services-text-content">
@@ -111,7 +116,8 @@ const Services = () => {
           </p>
         </div>
         <div className="services-img-box">
-          <img src="../../public/Images/data-management.avif" alt="Data Management" />
+       <img src="/Images/data-management.avif" alt="Data Management" />
+
         </div>
       </div>
     </div>
