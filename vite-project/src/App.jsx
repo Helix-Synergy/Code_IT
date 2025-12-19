@@ -44,6 +44,7 @@ const App = () => {
         <Route path="/data-management" element={<Services />} />
       </Routes>
       {/* <BrowserRouter> */}
+      <br />
       <Footer />
       {/* </BrowserRouter> */}
     </div>

@@ -29,6 +29,7 @@ const Home = () => {
       <InnoSolutions/>
       <Technologies />
       <Contact2/>
+      <br />
       <Marquee1 />
     </div>
   );
