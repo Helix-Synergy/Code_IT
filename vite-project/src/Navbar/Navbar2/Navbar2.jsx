@@ -23,7 +23,9 @@ const Navbar2 = () => {
     }
 
     window.googleTranslateElementInit = () => {
-      const translateElement = document.getElementById("google_translate_element");
+      const translateElement = document.getElementById(
+        "google_translate_element"
+      );
       translateElement.innerHTML = "";
 
       new window.google.translate.TranslateElement(
@@ -38,10 +40,7 @@ const Navbar2 = () => {
       <header className="home-header">
         {/* Logo Section */}
         <div className="logo">
-          <img
-            src="/Images/Header-Final-Logo.webp"
-            alt="Logo"
-          />
+          <img src="/Images/Header-Final-Logo.webp" alt="Logo" />
         </div>
 
         {/* Desktop / Tablet Navigation */}
@@ -51,7 +50,9 @@ const Navbar2 = () => {
 
           {/* Desktop Services Dropdown */}
           <div className="dropdown">
-            <span className="dropbtn" style={{color:"#ddd"}}>Services ▾</span>
+            <span className="dropbtn" style={{ color: "#ddd" }}>
+              Services ▾
+            </span>
             <div className="dropdown-content">
               <Link to="/digital-transformation">Digital Transformation</Link>
               <Link to="/software-development">Software Development</Link>
@@ -63,11 +64,13 @@ const Navbar2 = () => {
           </div>
 
           <Link to="/Academia">Academia</Link>
-          <Link to="/pro">Prod-Kit</Link>
+          <Link to="/products">Prod-Kit</Link>
 
           {/* Desktop Industries Dropdown */}
           <div className="dropdown-industries">
-            <span className="dropbtn-industries"  style={{color:"#ddd"}}>Industries ▾</span>
+            <span className="dropbtn-industries" style={{ color: "#ddd" }}>
+              Industries ▾
+            </span>
             <div className="dropdown-content-industries">
               <Link to="/industries/it">Information Technology</Link>
               <Link to="/industries/healthcare">Health Care</Link>
@@ -85,7 +88,10 @@ const Navbar2 = () => {
         </nav>
 
         {/* Mobile Menu Icon */}
-        <div className="mobile-menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+        <div
+          className="mobile-menu-icon"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
           <IoMdMenu />
         </div>
 
@@ -98,12 +104,19 @@ const Navbar2 = () => {
 
       {/* ------------------ MOBILE MENU ------------------ */}
       <div className={`mobile-dropdown ${menuOpen ? "show-menu" : ""}`}>
-        <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
-        <Link to="/about" onClick={() => setMenuOpen(false)}>About Us</Link>
+        <Link to="/" onClick={() => setMenuOpen(false)}>
+          Home
+        </Link>
+        <Link to="/about" onClick={() => setMenuOpen(false)}>
+          About Us
+        </Link>
 
         {/* === MOBILE SERVICES SECTION === */}
-        <div className="mobile-parent" onClick={() => toggleSubmenu("services")} >
-         Services
+        <div
+          className="mobile-parent"
+          onClick={() => toggleSubmenu("services")}
+        >
+          Services
           <span
             className={`arrow ${activeSubmenu === "services" ? "rotate" : ""}`}
           >
@@ -124,14 +137,23 @@ const Navbar2 = () => {
           <Link to="/data-management">Data Management</Link>
         </div>
 
-        <Link to="/Academia" onClick={() => setMenuOpen(false)}>Academia</Link>
-        <Link to="/pro" onClick={() => setMenuOpen(false)}>Prod-Kit</Link>
+        <Link to="/Academia" onClick={() => setMenuOpen(false)}>
+          Academia
+        </Link>
+        <Link to="/products" onClick={() => setMenuOpen(false)}>
+          Prod-Kit
+        </Link>
 
         {/* === MOBILE INDUSTRIES SECTION === */}
-        <div className="mobile-parent" onClick={() => toggleSubmenu("industries")}>
+        <div
+          className="mobile-parent"
+          onClick={() => toggleSubmenu("industries")}
+        >
           Industries
           <span
-            className={`arrow ${activeSubmenu === "industries" ? "rotate" : ""}`}
+            className={`arrow ${
+              activeSubmenu === "industries" ? "rotate" : ""
+            }`}
           >
             ▶
           </span>
@@ -153,7 +175,9 @@ const Navbar2 = () => {
           <Link to="/industries/logistics">Logistics</Link>
         </div>
 
-        <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+        <Link to="/contact" onClick={() => setMenuOpen(false)}>
+          Contact
+        </Link>
       </div>
     </>
   );

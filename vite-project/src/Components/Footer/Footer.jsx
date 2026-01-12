@@ -19,7 +19,7 @@ const HandleIndu=()=>{
   navigate("/Academia")
 }
 const HandlePr=()=>{
-  navigate("/pro")
+  navigate("/products")
 }
 const HandleCont=()=>{
   navigate("/contact")

@@ -22,7 +22,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/service" element={<Services />} />
         <Route path="/Academia" element={<Academics />}></Route>
-        <Route path="/pro" element={<Pro />}></Route>
+        <Route path="/products" element={<Pro />}></Route>
         <Route path="/industries" element={<Industries />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         {/* Routing of the Indurstries */}
@@ -45,6 +45,7 @@ const App = () => {
       </Routes>
       {/* <BrowserRouter> */}
       <br />
+      {/* The vite is here  */}
       <Footer />
       {/* </BrowserRouter> */}
     </div>
