@@ -74,6 +74,8 @@ const InnoSolutions = () => {
               style={{
                 "--bg-color": solution.bgColor,
               }}
+              aria-label={`${solution.title} solution tab`}
+
             >
               <span className="tab-number">
                 {solution.id.toString().padStart(2, "0")}

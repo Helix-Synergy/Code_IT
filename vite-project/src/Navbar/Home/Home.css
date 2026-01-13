@@ -580,3 +580,59 @@ height: 36px;
     display: none !important;
   }
 }
+/* =====================================================
+   PROFESSIONAL DESKTOP NAVBAR FIX (NO STRUCTURE CHANGE)
+   ===================================================== */
+
+/* Control navbar max width */
+.home-header {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/* Make nav items flexible */
+.home-nav {
+  flex-wrap: nowrap;
+  gap: clamp(16px, 2vw, 26px);
+}
+
+/* Responsive font scaling for laptop screens */
+.home-nav a,
+.dropbtn,
+.dropbtn-industries {
+  font-size: clamp(15px, 1.1vw, 18px);
+  white-space: nowrap;
+}
+
+/* Right section spacing fix */
+.right-section {
+  flex-shrink: 0;
+  gap: clamp(12px, 1.5vw, 20px);
+}
+
+/* Call button responsive size */
+.call-btn {
+  padding: clamp(8px, 1vw, 12px) clamp(18px, 2vw, 26px);
+  font-size: clamp(14px, 1vw, 16px);
+}
+
+/* Prevent navbar from breaking on medium laptops */
+@media (max-width: 1280px) {
+  .home-header {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .home-nav {
+    gap: 18px;
+  }
+}
+
+/* Prevent overflow on small laptops */
+@media (max-width: 1150px) {
+  .home-nav a {
+    font-size: 15px;
+  }
+}

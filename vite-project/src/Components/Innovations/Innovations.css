@@ -473,7 +473,7 @@
   }
   
   .slider-services-container {
-    right: 15px;
+    right: 25px;
     bottom: 15px;
     gap: 6px;
   }
@@ -608,5 +608,74 @@
   
   .slider-service-box:hover .slider-service-background-square {
     transform: none;
+  }
+}
+/* For the 80% Screen code  */
+/* =====================================================
+   DESKTOP STABILITY & SCALING FIX (NO EXISTING CODE TOUCHED)
+   ===================================================== */
+
+/* Limit extreme stretching on large screens */
+.innovations-container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* Desktop-friendly text scaling */
+.slide-content h1 {
+  font-size: clamp(2.4rem, 3.2vw, 3rem);
+}
+
+.slide-content p {
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+}
+
+/* Prevent service boxes from flying off-screen on laptops */
+.slider-services-container {
+  position: absolute;
+  right: -600px !important;
+  bottom: -200px !important;
+}
+
+
+/* Scale service boxes smoothly */
+.slider-service-box {
+  width: clamp(70px, 6vw, 100px);
+  height: clamp(70px, 6vw, 100px);
+}
+
+/* Scale service numbers */
+.slider-service-number {
+  font-size: clamp(1rem, 1.6vw, 1.5rem);
+}
+
+/* Scale service titles */
+.slider-service-title {
+  font-size: clamp(0.65rem, 0.9vw, 0.8rem);
+}
+
+/* Navigation buttons scaling */
+.nav-btn {
+  width: clamp(45px, 5vw, 60px);
+  height: clamp(45px, 5vw, 60px);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+/* Dots scaling */
+.dot {
+  width: clamp(10px, 1.2vw, 14px);
+  height: clamp(10px, 1.2vw, 14px);
+}
+
+/* Prevent horizontal scroll on laptops */
+.innovations-wrapper,
+.innovations-container {
+  overflow-x: hidden;
+}
+
+/* Extra safety for small laptops (13" screens) */
+@media (max-width: 1366px) {
+  .slide-content {
+    max-width: 520px;
   }
 }

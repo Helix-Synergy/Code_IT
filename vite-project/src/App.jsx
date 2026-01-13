@@ -10,6 +10,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Footer from "./Components/Footer/Footer.jsx";
 import Navbar2 from "./Navbar/Navbar2/Navbar2.jsx";
 import It from "./Components/IT/It.jsx";
+import ScrollToTop from "./Components/ScrollToTop.jsx";
 
 const App = () => {
   return (

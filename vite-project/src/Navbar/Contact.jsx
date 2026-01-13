@@ -102,24 +102,28 @@ const Contact = () => {
                   <form id="contact_form" name="contact_form">
                     <div className="row g-4 mb-4">
                       <div className="col-6">
-                        <div className="input">
-                          <input
-                            name="form_name"
-                            id="form_name"
-                            type="text"
-                            placeholder="Enter Name"
-                          />
-                        </div>
+                    <div className="input">
+  <input
+    name="form_name"
+    id="form_name"
+    type="text"
+    placeholder="Enter Name"
+    aria-label="Enter your name"
+  />
+  <label for="form_name" class="visually-hidden">Name</label>
+</div>
                       </div>
                       <div className="col-6">
-                        <div className="input">
-                          <input
-                            name="form_email"
-                            id="form_email"
-                            type="email"
-                            placeholder="E-mail address"
-                          />
-                        </div>
+                    <div className="input">
+  <input
+    name="form_email"
+    id="form_email"
+    type="email"
+    placeholder="E-mail address"
+    aria-label="Enter your email address"
+  />
+  <label for="form_email" class="visually-hidden">Email Address</label>
+</div>
                       </div>
                     </div>
                     <div className="textarea">
