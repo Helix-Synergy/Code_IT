@@ -33,8 +33,8 @@ html, body, #root {
 .logo img {
   margin-top: 10px;
   margin-left: 20px;
-  width: 160px;          /* Perfect width */
-  height: auto;          /* No crop */
+  width: 100px;          /* Perfect width */
+  height: 90px;          /* No crop */
   object-fit: contain;   /* Fit inside */
 }
 

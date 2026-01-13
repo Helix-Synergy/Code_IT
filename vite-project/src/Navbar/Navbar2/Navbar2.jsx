@@ -40,7 +40,7 @@ const Navbar2 = () => {
       <header className="home-header">
         {/* Logo Section */}
         <div className="logo">
-          <img src="/Images/Header-Final-Logo.webp" alt="Logo" />
+          <img src="../../../public/Images/cos_-_2026__2_-removebg-preview(1).png" alt="Logo" />
         </div>
 
         {/* Desktop / Tablet Navigation */}
