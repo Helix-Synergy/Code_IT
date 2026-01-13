@@ -21,7 +21,7 @@ const Contact = () => {
                   </div>
 
                   <ul className="contact-list">
-                    <p className="fw-bold">US Office</p>
+                    <p className="fw-bold">Canada Office</p>
                     <li>
                       <svg
                         width="15"
@@ -36,8 +36,7 @@ const Contact = () => {
                         ></path>
                       </svg>
                       <a href="#0">
-                        45573, Shepard Drive, Suit#101, Sterling,
-                        Virginia-20164, USA
+                       Vancouver | Canada
                       </a>
                     </li>
                   </ul>

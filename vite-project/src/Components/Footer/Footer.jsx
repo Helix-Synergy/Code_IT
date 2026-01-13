@@ -32,7 +32,7 @@ const HandleDigi=()=>{
 
       {/* -------- LEFT SECTION -------- */}
       <div className="footer-left">
-        <img src="/Images/WhatsApp Image 2025-11-27 at 14.02.01_88f46c57.jpg" alt="" />
+        <img src="../../../public/Images/Header-Final-Logo.webp" alt="" />
         <p>
           Transform your business with cutting-edge Information
           Technology solutions. From tailored advanced cybersecurity measures,
