@@ -9,6 +9,9 @@ import "./Footer.css";
 import { useNavigate } from 'react-router-dom';
 const Footer = () => {
 const navigate=useNavigate()
+const HandleHome=()=>{
+  navigate("/")
+}
  const  HandleAbout=()=>{
 navigate("/about")
  }
@@ -61,7 +64,8 @@ const HandleDigi=()=>{
       {/* -------- COMPANY -------- */}
       <div className="footer-col">
         <h2>Company</h2>
-        <h6>Home</h6>
+        
+         <h6 onClick={HandleHome}>Home</h6>
         <h6 onClick={HandleAbout}>About Us</h6>
         <h6 onClick={HandlesService}>Services</h6>
         <h6 onClick={HandleIndu}>Industries</h6>

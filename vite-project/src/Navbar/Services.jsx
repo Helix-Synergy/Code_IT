@@ -4,15 +4,18 @@ import './Services.css'
 const Services = () => {
   return (
     <div className="services-page">
-      <div className="services-hero-section">
-       <h1
-  className="services-main-title"
-  style={{ backgroundImage: "url(/Images/servies.webp)" }}
->
-  Services
-</h1>
+    <div className="services-page">
+  <div
+    className="services-hero-section"
+    style={{
+      backgroundImage:
+        "url('https://codeitconsulting.co.in/assets/img/breadcrumb/1.jpg')",
+    }}
+  >
+    <h1 className="services-main-title">Services</h1>
+  </div>
+</div>
 
-      </div>
       
       {/* Digital Transformation */}
       <div className="services-section services-section-reverse">

@@ -1,8 +1,10 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import "./Academics.css";
-
+import { useNavigate } from "react-router-dom";
 const Academics = () => {
+  const navigate=useNavigate()
+  const HandleContactButton=()=>{navigate("/contact")}
   return (
     <div className="academics-container">
       {/* Hero Banner */}
@@ -32,7 +34,7 @@ const Academics = () => {
             real-world exposure and enable intellectual property-driven
             outcomes.
           </p>
-          <Button className="academics-btn">Contact Us</Button>
+          <Button className="academics-btn" onClick={HandleContactButton}>Contact Us</Button>
         </div>
       </div>
 
@@ -179,7 +181,7 @@ const Academics = () => {
           Access to real-time projects and live coding environments. Domain-specific guidance and tech stack expertise.
           Global collaboration opportunities and journal tie-ups. Support for both academic credit and intellectual property creation.
         </p>
-        <Button className="academics-btn enroll-btn">Enroll Today</Button>
+        <Button className="academics-btn enroll-btn" onClick={HandleContactButton}>Enroll Today</Button>
       </div>
     </div>
   );
