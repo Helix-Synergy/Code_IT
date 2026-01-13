@@ -40,7 +40,8 @@ const Navbar2 = () => {
       <header className="home-header">
         {/* Logo Section */}
         <div className="logo">
-          <img src="../../../public/Images/HomeImage.png" alt="Logo" />
+         <img src="/Images/HomeImage.png" alt="Logo" />
+
         </div>
 
         {/* Desktop / Tablet Navigation */}
