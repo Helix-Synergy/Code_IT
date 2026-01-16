@@ -19,7 +19,7 @@ import OurServices from "../../Components/OurServices/OurServices.jsx";
 const Home = () => {
   return (
     <div>
-      <br />
+    
 
       <Innovations />
       <Vision />
@@ -29,8 +29,8 @@ const Home = () => {
       <InnoSolutions/>
       <Technologies />
       <Contact2/>
-      <br />
-      <Marquee1 />
+      {/* <br /> */}
+      {/* <Marquee1 /> */}
     </div>
   );
 };

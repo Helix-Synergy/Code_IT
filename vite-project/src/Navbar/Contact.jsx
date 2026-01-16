@@ -57,8 +57,8 @@ const Contact = () => {
                         ></path>
                       </svg>
                       <a href="#0">
-                        #402, 4<sup>th</sup> Floor, Manjeera Trinity Corporate,
-                        KPHB, Hyderabad, 500072
+                         Raheja Mindspace IT Park, HITEC City, Madhapur,
+                         Hyderabad, Telangana, 500081
                       </a>
                     </li>
                     <li>

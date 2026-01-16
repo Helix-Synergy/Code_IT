@@ -1,42 +1,66 @@
-import React, { useState } from 'react';
-import './OurServices.css';
+import React, { useState } from "react";
+import "./OurServices.css";
+
+const services = [
+  {
+    title: "DIGITAL TRANSFORMATION",
+    image: "/Images/InnoSolutions/digital-transformation.avif",
+  },
+  {
+    title: "SOFTWARE DEVELOPMENT",
+    image: "/Images/InnoSolutions/software-development.avif",
+  },
+  {
+    title: "APP DEVELOPMENT",
+    image: "/Images/InnoSolutions/app-development.avif",
+  },
+  {
+    title: "CYBER SECURITY",
+    image: "/Images/InnoSolutions/cyber-security.avif",
+  },
+  {
+    title: "NETWORKING",
+    image: "/Images/InnoSolutions/networking.avif",
+  },
+  {
+    title: "DATA MANAGEMENT",
+    image: "/Images/InnoSolutions/data-management.avif",
+  },
+];
 
 const OurServices = () => {
-  const [activeImage, setActiveImage] = useState("/Images/InnoSolutions/digital-transformation.avif");
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <div className="services-wrapper">
-
-      <div className="services-left">
-        <div className="service-column" onClick={() => setActiveImage("/Images/InnoSolutions/digital-transformation.avif")}>
-          <h5>DIGITAL TRANSFORMATION</h5>
+      <div className="services-container">
+        {/* LEFT SIDE - SERVICE TITLES */}
+        <div className="services-titles">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className={`service-title-item ${
+                index === activeIndex ? "active" : ""
+              }`}
+              onClick={() => setActiveIndex(index)}
+            >
+              <h5>{service.title}</h5>
+            </div>
+          ))}
         </div>
 
-        <div className="service-column" onClick={() => setActiveImage("/Images/InnoSolutions/software-development.avif")}>
-          <h5>SOFTWARE DEVELOPMENT</h5>
-        </div>
-
-        <div className="service-column" onClick={() => setActiveImage("/Images/InnoSolutions/app-development.avif")}>
-          <h5>APP DEVELOPMENT</h5>
-        </div>
-
-        <div className="service-column" onClick={() => setActiveImage("/Images/InnoSolutions/cyber-security.avif")}>
-          <h5>CYBER SECURITY</h5>
-        </div>
-
-        <div className="service-column" onClick={() => setActiveImage("/Images/InnoSolutions/networking.avif")}>
-          <h5>NETWORKING</h5>
-        </div>
-
-        <div className="service-column" onClick={() => setActiveImage("/Images/InnoSolutions/data-management.avif")}>
-          <h5>DATA MANAGEMENT</h5>
+        {/* RIGHT SIDE - IMAGE DISPLAY */}
+        <div className="services-image-container">
+          <div className="image-box">
+            <img src={services[activeIndex].image} alt={services[activeIndex].title} />
+          </div>
+          
+          {/* OVERLAY TEXT (Optional - if you want text on image too) */}
+          <div className="image-overlay">
+            <h2>{services[activeIndex].title}</h2>
+          </div>
         </div>
       </div>
-
-      <div className="services-right">
-        <img src={activeImage} alt="Selected" />
-      </div>
-
     </div>
   );
 };

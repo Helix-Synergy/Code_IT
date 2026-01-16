@@ -50,7 +50,7 @@ background-image: url('/Images/InnoSolutions/free-consultation.avif');
   color: #ffffff;
   font-size: 36px;
   font-weight: 700;
-  margin: 0 0 15px 0;
+  margin: 0 0 -25px 0;
   line-height: 1.2;
 }
 
@@ -60,7 +60,7 @@ background-image: url('/Images/InnoSolutions/free-consultation.avif');
   line-height: 1.5;
   margin: 0;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 20px -40px 0;
 }
 
 /* Form Styles */
@@ -70,7 +70,7 @@ background-image: url('/Images/InnoSolutions/free-consultation.avif');
   padding: 40px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(5px);
-  width: 50%;
+  width: 48%;
   margin-left: 650px;
 }
 

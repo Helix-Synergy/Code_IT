@@ -42,7 +42,7 @@ const Contact2 = () => {
           <div className="contact2-content-wrapper">
             <div className="contact2-header">
               <h1 className="contact2-title">Call us for FREE consultation</h1>
-              <p className="contact2-subtitle">Get in touch with our experts for a no-obligation consultation</p>
+              {/* <p className="contact2-subtitle">Get in touch with our experts for a no-obligation consultation</p> */}
             </div>
 
             {/* Form Section */}

@@ -3,10 +3,10 @@
   width: 100% !important;
   background-color: #0f172a;
   color: white;
-  padding: 90px 80px 30px 80px ;
+  padding: 110px 100px 40px 100px;
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1fr;
-  gap: 60px;
+  gap: 80px;
   justify-content: space-between;
   position: relative;
     align-items: start;
@@ -16,13 +16,14 @@
 /* ================= LEFT BOX ================= */
 .footer-left img {
   width: 150px;
-  margin-bottom: 20px;
-  height: 120px;
+  margin-bottom: -30px;
+  height: auto; /* FIXED */
+  object-fit: contain; /* Optional but recommended */
 }
 
 .footer-left p {
   font-size: 15px;
-  line-height: 24px;
+  line-height: 29px;
   margin-bottom: 25px;
   color: #cbd5e1;
 }
@@ -33,7 +34,7 @@
 }
 
 .footer-socials svg {
-  font-size: 20px;
+  font-size: 24px;
   cursor: pointer;
   transition: 0.3s ease;
   color: #94a3b8;
@@ -47,16 +48,16 @@
 /* ================= COLUMN TITLES ================= */
 .footer-col h2,
 .footer-newsletter h2 {
-  font-size: 18px;
-  margin-bottom: 20px;
+  font-size: 22px;
+  margin-bottom: 25px;
   font-weight: 600;
   color: #f8fafc;
 }
 
 .footer-col h6 {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   cursor: pointer;
   color: #94a3b8;
   transition: 0.3s ease;
@@ -69,8 +70,8 @@
 
 /* ================= NEWSLETTER ================= */
 .footer-newsletter p {
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 16px;
+  line-height: 26px;
   margin-bottom: 25px;
   color: #94a3b8;
 }
@@ -79,18 +80,18 @@
   display: flex;
   align-items: center;
   background: white;
-  border-radius: 8px;
-  padding: 4px;
+  border-radius: 10px;
+  padding: 8px;
   gap: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .newsletter-box input {
   flex: 1;
-  padding: 12px 15px;
+  padding: 16px 18px;
   border: none;
   outline: none;
-  font-size: 14px;
+  font-size: 16px;
   border-radius: 5px;
   background: transparent;
   color: #334155;
@@ -101,21 +102,21 @@
 }
 
 .mail-icon {
-  font-size: 20px;
+  font-size: 24px;
   color: #64748b;
   margin-left: 12px;
 }
 
 .send-icon {
-  font-size: 18px;
+  font-size: 20px;
   cursor: pointer;
   transition: 0.3s ease;
   color: white;
   padding: 10px;
   background: #0f172a;
   border-radius: 6px;
-  min-width: 40px;
-  height: 40px;
+  min-width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -138,7 +139,7 @@
 }
 
 .footer-bottom h5 {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   color: #94a3b8;
   margin: 0;
@@ -202,7 +203,7 @@
   }
   
   .footer-left p {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 22px;
   }
   
@@ -212,7 +213,7 @@
   }
   
   .footer-col h6 {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 

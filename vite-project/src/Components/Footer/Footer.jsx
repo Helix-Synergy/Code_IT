@@ -56,10 +56,11 @@ const Footer = () => {
       {/* -------- LEFT SECTION -------- */}
       <div className="footer-left">
         <img src="/Images/HomeImage.png" alt="Code IT Consulting logo" />
+        <br />
+        <br />
         <p>
           Transform your business with cutting-edge Information
-          Technology solutions. From tailored advanced cybersecurity measures,
-          IT powers innovation and efficiency.
+          Technology solutions.
         </p>
 
     <div className="footer-socials">

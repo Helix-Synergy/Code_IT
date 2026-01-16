@@ -49,9 +49,7 @@ const Technologies = () => {
             <Card.Body>
               <Card.Title>Cybersecurity</Card.Title>
               <Card.Text>
-                Implement multi-factor authentication and robust encryption.
-                Regularly update software and conduct penetration testing.
-                Educate employees on phishing and social engineering risks.
+               Protect, secure, and actively defend. Powering advanced multi-factor authentication, robust encryption protocols, and proactive threat detection systems. Unlock new possibilities for businesses, enterprises, and digital operations.
               </Card.Text>
               <Button variant="primary">View More</Button>
             </Card.Body>
@@ -99,9 +97,7 @@ const Technologies = () => {
             <Card.Body>
               <Card.Title>Blockchain Technology</Card.Title>
               <Card.Text>
-                Immutable records ensure trust and traceability. Smart
-                contracts automate agreements, eliminating intermediaries.
-                Enhance security efficiency across industries.
+          Immutable, transparent, and highly reliable. Powering automated agreements, secure financial transactions, and end-to-end data traceability. Unlock new possibilities for businesses, enterprises, and industries alike.
               </Card.Text>
               <Button variant="primary">View More</Button>
             </Card.Body>
@@ -115,9 +111,7 @@ const Technologies = () => {
             <Card.Body>
               <Card.Title>AR & VR</Card.Title>
               <Card.Text>
-                Enhance experiences with interactive product demos and virtual
-                tours. Train employees in realistic, risk-free simulations.
-                Revolutionize marketing with engaging, personalized content.
+              Elevate experiences with interactive product demos and virtual tours. Powering realistic, risk-free employee training and immersive marketing simulations. Unlock new possibilities for businesses and consumers alike.
               </Card.Text>
               <Button variant="primary">View More</Button>
             </Card.Body>
