@@ -148,7 +148,7 @@ const Contact = () => {
             <div className="col-xl-5 order-1 order-xl-1">
               <div className="contact-two__map">
                 <img
-                  src="../../public/Images/Contact1.jpg"
+                src="/Images/Contact1.jpg"
                   alt="location map"
                 />
               </div>
