@@ -30,9 +30,9 @@ const Pro = () => {
             IT PROD-KIT is your one-stop solution to streamline operations,
             boost productivity, and drive digital excellence
           </p>
-          <Button className="cta-button" onClick={HandleCallButton}>
+          {/* <Button className="cta-button" onClick={HandleCallButton}>
             Call Now
-          </Button>
+          </Button> */}
         </div>
         <div className="intro-image">
           <img src="/Images1/Prod/c-get (1).webp" alt="Code IT PROD-KIT" />

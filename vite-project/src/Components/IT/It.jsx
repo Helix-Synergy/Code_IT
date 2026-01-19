@@ -19,7 +19,7 @@ const It = () => {
         <div className="it-text">
           <h1>Information Technology</h1>
           <p>
-            The IT industry drives CodeIT Consulting by offering cutting-edge
+            The IT industry drives Code IT Consulting by offering cutting-edge
             technological solutions that transform businesses and boost
             operational efficiency. Key services include software development,
             IT infrastructure management, cloud solutions, and cybersecurity,
@@ -47,10 +47,10 @@ const It = () => {
           <h1>Healthcare</h1>
           <p>
             Healthcare requires secure, interoperable IT for patient data and
-            compliance. CodeIT delivers EHR/EMR solutions, telehealth platforms,
+            compliance. Code IT delivers EHR/EMR solutions, telehealth platforms,
             and data security expertise. We enable healthcare providers to
             modernize with digital transformation and HIPAA compliance. Partner
-            with CodeIT to enhance patient care and operational efficiency
+            with Code IT to enhance patient care and operational efficiency
             through technology. The firm also delivers robust risk management
             systems, cloud- based platforms, and automated processes to enhance
             productivity. These innovative services empower businesses to make
@@ -67,7 +67,7 @@ const It = () => {
         <div className="it-text">
           <h1>Banking</h1>
           <p>
-            CodeIT Consulting's IT banking services revolutionize financial
+            Code IT Consulting's IT banking services revolutionize financial
             operations with tailored technology solutions. These include secure
             digital banking platforms, fraud detection systems, and advanced
             data analytics for informed decision-making. The offerings also
@@ -93,7 +93,7 @@ const It = () => {
         <div className="it-text">
           <h1>Finance</h1>
           <p>
-            CodeIT Consulting's IT finance services streamline and optimize
+            Code IT Consulting's IT finance services streamline and optimize
             financial operations through cutting-edge technology solutions. Key
             offerings include financial software development, data analytics,
             and digital payment integration, ensuring efficiency and security.
@@ -140,10 +140,10 @@ const It = () => {
           <h1>Retail</h1>
           <p>
             Retail demands agile IT solutions for e-commerce, inventory, and
-            customer experience. CodeIT delivers custom e-commerce platforms,
+            customer experience. Code IT delivers custom e-commerce platforms,
             data analytics, and supply chain solutions. We empower retailers
             with digital transformation, omnichannel strategies, and data-
-            driven insights. Partner with CodeIT to enhance your retail
+            driven insights. Partner with Code IT to enhance your retail
             operations and customer engagement through technology. The store
             provides cutting-edge inventory management systems, cloud-based
             shopping platforms, and streamlined processes to boost efficiency.
@@ -190,7 +190,7 @@ const It = () => {
           <h1>e-Commerce</h1>
           <p>
             e-Commerce thrives on seamless, scalable IT for online sales and
-            customer engagement. CodeIT delivers custom e-commerce platforms,
+            customer engagement. Code IT delivers custom e-commerce platforms,
             payment gateway integrations, and data analytics. We empower online
             businesses with digital transformation, personalized experiences,
             and secure transactions..leveraging cutting-edge technologies,
@@ -210,7 +210,7 @@ const It = () => {
         <div className="it-text">
           <h1>Logistics</h1>
           <p>
-            The logistics industry plays a crucial role in CodeIT Consulting
+            The logistics industry plays a crucial role in Code IT Consulting
             by streamlining supply chains, ensuring seamless transportation,
             and optimizing operational efficiency. It offers comprehensive
             solutions like inventory management, warehousing, and distribution

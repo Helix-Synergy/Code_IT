@@ -149,7 +149,7 @@ const Contact = () => {
               <div className="contact-two__map">
                 <img
                 src="/Images/Contact1.jpg"
-                  alt="location map"
+                  alt="Contact Image"
                 />
               </div>
             </div>

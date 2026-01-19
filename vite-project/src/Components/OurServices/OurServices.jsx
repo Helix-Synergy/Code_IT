@@ -29,37 +29,55 @@ const services = [
 ];
 
 const OurServices = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0); // Start with first item active
 
   return (
     <div className="services-wrapper">
-      <div className="services-container">
-        {/* LEFT SIDE - SERVICE TITLES */}
-        <div className="services-titles">
-          {services.map((service, index) => (
+      <div className="services-heading">
+        <h2>Our Services</h2>
+      </div>
+
+      <div className="services-grid">
+        {services.map((service, index) => {
+          const isActive = index === activeIndex;
+
+          return (
             <div
               key={index}
-              className={`service-title-item ${
-                index === activeIndex ? "active" : ""
-              }`}
+              className={`service-card ${isActive ? "active" : ""}`}
               onClick={() => setActiveIndex(index)}
             >
-              <h5>{service.title}</h5>
-            </div>
-          ))}
-        </div>
+              {/* Top Number */}
+              <div className="service-number">
+                {String(index + 1).padStart(2, "0")}
+              </div>
 
-        {/* RIGHT SIDE - IMAGE DISPLAY */}
-        <div className="services-image-container">
-          <div className="image-box">
-            <img src={services[activeIndex].image} alt={services[activeIndex].title} />
-          </div>
-          
-          {/* OVERLAY TEXT (Optional - if you want text on image too) */}
-          <div className="image-overlay">
-            <h2>{services[activeIndex].title}</h2>
-          </div>
-        </div>
+              {/* Center Image with proper container */}
+              <div className="service-image-container">
+                <div className="service-image">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className={isActive ? "active-image" : "inactive-image"}
+                  />
+                </div>
+              </div>
+
+              {/* Vertical Text - Better positioned */}
+              <div className="service-title">
+                <h6>{service.title}</h6>
+              </div>
+
+              {/* Overlay for active - More prominent like second image */}
+              {isActive && (
+                <div className="service-overlay">
+                  <h3>{service.title}</h3>
+                  <div className="active-indicator"></div>
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );

@@ -6,45 +6,24 @@ const Innovations = () => {
 
   const slides = [
     {
-      image: "/Images/New folder 1/hacker-8003396_1280.webp",
+      image: "../../../public/Images/one.jpg",
       title: "Innovative IT Solutions for Modern Businesses",
       description:
         "We bring a fresh, dynamic perspective to every client relationship, driven by a relentless energy that sparks action.",
     },
     {
-      image: "/Images/New%20folder%201/steptodown.com144720.webp",
+      image: "../../../public/Images/two.webp",
       title: "Innovative IT Solutions for Modern Businesses",
       description:
         "We bring a fresh, dynamic perspective to every client relationship, driven by a relentless energy that sparks action.",
     },
     {
-      image: "/Images/New folder 1/hacker-8003396_1280.webp",
+      image: "../../../public/Images/three.jpg",
       title: "Innovative IT Solutions for Modern Businesses",
       description:
         "We bring a fresh, dynamic perspective to every client relationship, driven by a relentless energy that sparks action.",
     },
   ];
-
-  const services = [
-    {
-      number: "01",
-      title: "Software Development",
-      description: "Custom software solutions tailored to your business needs",
-    },
-    {
-      number: "02",
-      title: "IT Consulting",
-      description:
-        "Strategic IT guidance to optimize your technology infrastructure",
-    },
-    {
-      number: "03",
-      title: "Cyber Security",
-      description:
-        "Comprehensive security solutions to protect your digital assets",
-    },
-  ];
-
   // Auto slide every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
@@ -55,18 +34,6 @@ const Innovations = () => {
   }, [slides.length]);
 
   const goToSlide = (index) => {
-    setCurrentSlide(index);
-  };
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
-  const handleServiceClick = (index) => {
     setCurrentSlide(index);
   };
 
@@ -84,42 +51,11 @@ const Innovations = () => {
               }}
             >
               <div className="slide-content">
-                <h1>{slide.title}</h1>
+                <h2>{slide.title}</h2>
                 <p>{slide.description}</p>
-
-                {/* Services Boxes in Slider */}
-                <div className="slider-services-container">
-                  {services.map((service, index) => (
-                    <div
-                      key={index}
-                      className={`slider-service-box ${
-                        index === currentSlide ? "active" : ""
-                      }`}
-                      onClick={() => handleServiceClick(index)}
-                    >
-                      <div className="slider-service-background-square"></div>
-                      <div className="slider-service-content">
-                        <span className="slider-service-number">
-                          {service.number}
-                        </span>
-                        <h3 className="slider-service-title">
-                          {service.title}
-                        </h3>
-                      </div>
-                    </div>
-                  ))}
-                </div>
               </div>
             </div>
           ))}
-
-          {/* Navigation arrows */}
-          {/* <button className="nav-btn prev-btn" onClick={prevSlide}>
-              ‹
-            </button>
-            <button className="nav-btn next-btn" onClick={nextSlide}>
-              ›
-            </button> */}
 
           {/* Dots indicator */}
           <div className="dots-container">

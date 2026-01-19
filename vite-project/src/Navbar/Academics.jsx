@@ -34,7 +34,7 @@ const Academics = () => {
             real-world exposure and enable intellectual property-driven
             outcomes.
           </p>
-          <Button className="academics-btn" onClick={HandleContactButton}>Contact Us</Button>
+          {/* <Button className="academics-btn" onClick={HandleContactButton}>Contact Us</Button> */}
         </div>
       </div>
 

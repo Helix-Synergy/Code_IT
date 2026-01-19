@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./Vision.css"
 const Vision = () => {
   return (
     <div className="vision-container">
@@ -23,7 +23,7 @@ const Vision = () => {
           To Empower businesses through seamless Digital transformation,
           Delivering innovative software and App solutions. We ensure secure and
           Robust Infrastructure via Advanced Cybersecurity, Networking, and
-          Cloud technologies. Our vision is to be the catalyst for our clients
+          Cloud technologies.Our vision is to be the catalyst for our clients
           success in the evolving digital landscape. We prioritize
           customer-centric solutions that drive efficiency and growth.
         </p>
@@ -73,13 +73,13 @@ const Vision = () => {
           </svg>
         </div>
         <h2>WHAT WE DO?</h2>
-        <p>
-          At CodeIT Consulting, We specialize in driving Digital transformation
-          through Innovative software development and Custom app solutions. Our
-          expertise extends to enhancing Cybersecurity, ensuring robust
-          protection for your digital assets. We also provide advanced
-          networking services and cloud solutions, helping businesses optimize.
-        </p>
+     <p>
+  At Code IT Consulting, We specialize in driving Digital transformation
+  through Innovative software development and Custom app solutions. Our
+  expertise extends to enhancing Cybersecurity, ensuring robust
+  protection for your digital assets. We also provide advanced
+  networking services and cloud solutions, helping businesses optimize.
+</p>
       </div>
 
       {/* Fourth Box */}
@@ -99,219 +99,17 @@ const Vision = () => {
           </svg>
         </div>
         <h2>WHY CHOOSE US?</h2>
-        <p>
-          Choose CodeIT Consulting for our proven expertise in Digital
-          transformation, Empowering your business with tailored software and
-          App development solutions. We prioritize your security with top-notch
-          Cybersecurity services and ensure seamless connectivity with reliable
-          networking solutions. Our cloud offerings provide scalability and
-          efficiency.
-        </p>
+     <p>
+  Choose Code IT Consulting for our proven expertise in Digital
+  transformation, Empowering your business with tailored software and
+  App development solutions. We prioritize your security with top-notch
+  Cybersecurity services and ensure seamless connectivity with reliable
+  networking solutions. Our cloud offerings provide scalability and
+  efficiency.
+</p>
       </div>
 
-      <style jsx>{`
-        .vision-container {
-          display: flex;
-          flex-direction: column;
-          gap: 2rem;
-          padding: 1rem;
-          max-width: 1400px;
-          margin: 0 auto;
-        }
-
-        .vision-box {
-          background: rgb(21, 21, 23);
-          border-radius: 16px;
-          padding: 1.5rem;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-          text-align: center;
-          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-          position: relative;
-          overflow: hidden;
-          border: 1px solid #333;
-        }
-
-        .vision-box::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(90deg, 
-            transparent, 
-            rgba(255, 255, 255, 0.05), 
-            transparent);
-          transition: left 0.6s ease;
-        }
-
-        .vision-box:hover::before {
-          left: 100%;
-        }
-
-        .vision-box:hover {
-          transform: translateY(-8px) scale(1.02);
-          box-shadow: 0 12px 30px rgba(255, 255, 255, 0.1);
-          border-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .vision-icon {
-          margin-bottom: 1rem;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          transition: all 0.3s ease;
-        }
-
-        .vision-box:hover .vision-icon {
-          transform: scale(1.1) rotate(5deg);
-        }
-
-        .vision-icon svg {
-          width: 60px;
-          height: 60px;
-          transition: all 0.3s ease;
-        }
-
-        .vision-box:hover .vision-icon svg {
-          filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.2));
-        }
-
-        h2 {
-          color: #ffffff;
-          font-size: 1.5rem;
-          margin-bottom: 1rem;
-          font-weight: 700;
-          transition: color 0.3s ease;
-        }
-
-        .vision-box:hover h2 {
-          color: #e0e0e0;
-        }
-
-        p {
-          color: #cccccc;
-          line-height: 1.6;
-          font-size: 0.95rem;
-          transition: color 0.3s ease;
-        }
-
-        .vision-box:hover p {
-          color: #ffffff;
-        }
-
-        /* Tablet styles */
-        @media (min-width: 768px) {
-          .vision-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            padding: 2rem;
-          }
-
-          .vision-box {
-            padding: 2rem;
-          }
-
-          .vision-icon svg {
-            width: 70px;
-            height: 70px;
-          }
-
-          h2 {
-            font-size: 1.75rem;
-          }
-
-          p {
-            font-size: 1rem;
-          }
-        }
-
-        /* Laptop/Desktop styles - 4 in a row */
-        @media (min-width: 1024px) {
-          .vision-container {
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            padding: 3rem 2rem;
-          }
-
-          .vision-box {
-            padding: 1.5rem;
-            text-align: center;
-          }
-
-          .vision-icon {
-            justify-content: center;
-          }
-
-          .vision-icon svg {
-            width: 60px;
-            height: 60px;
-          }
-
-          h2 {
-            font-size: 1.5rem;
-          }
-
-          p {
-            font-size: 0.9rem;
-            line-height: 1.5;
-          }
-        }
-
-        /* Large desktop styles */
-        @media (min-width: 1280px) {
-          .vision-container {
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            padding: 4rem 2rem;
-          }
-
-          .vision-box {
-            padding: 2rem;
-          }
-
-          .vision-icon svg {
-            width: 70px;
-            height: 70px;
-          }
-
-          h2 {
-            font-size: 1.6rem;
-          }
-
-          p {
-            font-size: 0.95rem;
-            line-height: 1.6;
-          }
-        }
-
-        /* Extra large screens */
-        @media (min-width: 1536px) {
-          .vision-container {
-            gap: 2.5rem;
-            padding: 5rem 2rem;
-          }
-
-          .vision-box {
-            padding: 2.5rem;
-          }
-
-          .vision-icon svg {
-            width: 80px;
-            height: 80px;
-          }
-
-          h2 {
-            font-size: 1.75rem;
-          }
-
-          p {
-            font-size: 1rem;
-            line-height: 1.7;
-          }
-        }
-      `}</style>
+     
     </div>
   );
 };

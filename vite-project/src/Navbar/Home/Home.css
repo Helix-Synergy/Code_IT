@@ -21,36 +21,51 @@ html, body, #root {
 
 /* Navbar Layout */
 .home-header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: #0A0D1F;
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding-bottom: 25px;
-  border-bottom: 2px solid transparent;
+  justify-content: space-between;
+
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 18px 40px;
+
+  border-bottom: 3px solid transparent;
   border-image: linear-gradient(90deg, #fe00ff, #0095ff) 1;
 }
 
+
 /* Updated Logo Size */
 .logo img {
-  margin-top: 10px;
-  margin-left: 20px;
-  width: 100px;          /* Perfect width */
-  height: 90px;          /* No crop */
-  object-fit: contain;   /* Fit inside */
+  width: 90px;
+  height: auto;
+  object-fit: contain;
+  margin: 0;
 }
+
 
 /* Navbar Links */
 .home-nav {
-  margin-top: 10px;
   display: flex;
-  gap: 28px;
+  align-items: center;
+  gap: 32px;   /* 👈 THIS CONTROLS SPACING */
+  margin: 0;
+  padding: 0;
 }
+
 
 .home-nav a {
   color: #ddd;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
+  white-space: nowrap;
   transition: 0.3s;
 }
+
 
 .home-nav a:hover {
   color: #00aaff;
@@ -60,8 +75,10 @@ html, body, #root {
 .right-section {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 18px;
+  flex-shrink: 0;
 }
+
 
 /* Google Translate Box */
 .translate-box {
@@ -383,8 +400,8 @@ height: 36px;
   font-size: 47px;
   color: white;
   cursor: pointer;
-  margin-top: -94px;
-  margin-left: 270px;
+  /* margin-top: -94px;
+  margin-left: 270px; */
 }
 
 /* ============================
@@ -431,9 +448,13 @@ height: 36px;
   }
 
   /* Show menu icon */
-  .mobile-menu-icon {
-    display: block;
-  }
+.mobile-menu-icon {
+  display: none;
+  font-size: 36px;
+  color: white;
+  cursor: pointer;
+}
+
 
   /* Let header adjust */
   .home-header {
@@ -472,18 +493,15 @@ height: 36px;
 
 /* Tablet and below (768px ↓) */
 @media (max-width: 768px) {
-  .call-btn {
-    display: none !important;
-  }
-  .translate-box {
-    display: none !important;
+  .home-nav {
+    display: none;
   }
 
-  /* Adjust right-section spacing */
-  .right-section {
-    gap: 0px;
+  .mobile-menu-icon {
+    display: block;
   }
 }
+
 
 /* Mobile (600px ↓) */
 @media (max-width: 600px) {
@@ -635,4 +653,54 @@ height: 36px;
   .home-nav a {
     font-size: 15px;
   }
+}
+/* ============================
+   ACADEMIA DROPDOWN (DESKTOP)
+   ============================ */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-link {
+  text-decoration: none;
+  color: #181818;
+  padding: 10px 15px;
+  font-size: 18px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(0, 0, 0, 0.85);
+  min-width: 240px;
+  padding: 12px 0;
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
+  z-index: 10000;
+  backdrop-filter: blur(4px);
+}
+
+.dropdown-menu a {
+  padding: 12px 20px;
+  color: #252323;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* SHOW ON HOVER */
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+/* Hover text color */
+.dropdown:hover .dropdown-link {
+  color: #00aaff;
 }

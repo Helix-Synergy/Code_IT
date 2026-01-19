@@ -14,7 +14,7 @@ const About = () => {
       </div>
       <div className="about-content">
         <div className="about-text">
-          <h1 className="about-codeit">About CodeIT</h1>
+          <h1 className="about-codeit">About Code IT</h1>
           <p className="about-description">
             Where innovation meets excellence! We are a trusted technology
             solutions provider, committed to driving business success in the
@@ -44,7 +44,7 @@ const About = () => {
         <div className="about-image">
           <img
             src="/Images/New folder 1/about1.webp"
-            alt="About CodeIT Consulting"
+            alt="About Code IT Consulting"
           />
         </div>
       </div>

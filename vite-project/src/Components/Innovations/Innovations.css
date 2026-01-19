@@ -1,5 +1,5 @@
 .innovations-wrapper {
-  width: 100% !important;
+  width: 100% ;
 }
 
 /* Image Slider Styles */
@@ -50,10 +50,10 @@
   width: auto;
 }
 
-.slide-content h1 {
-  font-size: 5rem;
+.slide-content h2 {
+  font-size: 3.1rem !important;
   margin-bottom: 1.5rem;
-  font-weight: 700;
+  font-weight: 500;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 

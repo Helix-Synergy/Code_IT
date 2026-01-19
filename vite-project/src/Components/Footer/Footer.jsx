@@ -141,7 +141,7 @@ const Footer = () => {
 
       {/* -------- BOTTOM SECTION -------- */}
       <div className="footer-bottom">
-        <h5>© 2025 CodeIT Consulting</h5> 
+        <h5>© 2026 Code IT Consulting</h5> 
         <h5>Privacy & Cookie Policy</h5>
       </div>
 

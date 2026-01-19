@@ -23,12 +23,10 @@
 }
 
 .about-code-description {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #ccc;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  font-weight: 400;
+   font-size: 1.1rem;
+  line-height: 1.8;
+  color: #e2e8f0;
+  text-align: justify;
 }
 
 .about-code-stats {
@@ -162,12 +160,14 @@
   width: 100%;
   text-align: center;
   margin-top: 1rem;
-  order: -1;
+  margin-bottom: 350px;
+    max-width: 900px;
+
 }
 
 .about-code-image img {
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);

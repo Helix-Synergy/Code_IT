@@ -43,6 +43,13 @@ const App = () => {
         <Route path="/cyber-security" element={<Services />} />
         <Route path="/networking" element={<Services />} />
         <Route path="/data-management" element={<Services />} />
+        {/* Acadamicea */}
+        <Route path="/tech-internships" element={<Academics />}></Route>
+        <Route path="/tech-projects" element={<Academics />}></Route>
+        <Route path="/contract-research" element={<Academics />}></Route>
+        <Route path="/tech-publications" element={<Academics />}></Route>
+        <Route path="/patent-filing" element={<Academics />}></Route>
+        <Route path="/tech-meets-talks" element={<Academics />}></Route>
       </Routes>
       {/* <BrowserRouter> */}
       <br />
