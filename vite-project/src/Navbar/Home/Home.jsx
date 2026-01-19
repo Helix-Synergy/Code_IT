@@ -15,7 +15,7 @@ import InnoSolutions from "../../Components/InnoSolutions/InnoSolutions.jsx";
 import Contact2 from "../../Components/Contact2/Contact2.jsx";
 import Bussiness from "../../Components/Bussiness/Bussiness.jsx";
 import OurServices from "../../Components/OurServices/OurServices.jsx";
-import ServicesAccordion from "../../Components/OurServices1/ServicesAccordion.jsx";
+
 
 const Home = () => {
   return (
