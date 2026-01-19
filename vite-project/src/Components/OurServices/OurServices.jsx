@@ -29,52 +29,34 @@ const services = [
 ];
 
 const OurServices = () => {
-  const [activeIndex, setActiveIndex] = useState(0); // Start with first item active
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <div className="services-wrapper">
-      <div className="services-heading">
-        <h2>Our Services</h2>
-      </div>
+      <h2 className="services-heading">Our Services</h2>
 
-      <div className="services-grid">
+      <div className="services-row">
         {services.map((service, index) => {
-          const isActive = index === activeIndex;
+          const isActive = activeIndex === index;
 
           return (
-            <div
-              key={index}
-              className={`service-card ${isActive ? "active" : ""}`}
-              onClick={() => setActiveIndex(index)}
-            >
-              {/* Top Number */}
-              <div className="service-number">
-                {String(index + 1).padStart(2, "0")}
+            <div key={index} className="service-pair">
+              {/* VERTICAL TEXT */}
+              <div
+                className={`vertical-item ${isActive ? "active" : ""}`}
+                onClick={() => setActiveIndex(index)}
+              >
+                <span className="vertical-number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                <span className="vertical-text">{service.title}</span>
               </div>
 
-              {/* Center Image with proper container */}
-              <div className="service-image-container">
-                <div className="service-image">
-                  <img 
-                    src={service.image} 
-                    alt={service.title}
-                    className={isActive ? "active-image" : "inactive-image"}
-                  />
-                </div>
+              {/* IMAGE NEXT RIGHT */}
+              <div className={`inline-image ${isActive ? "show" : ""}`}>
+                <img src={service.image} alt={service.title} />
               </div>
-
-              {/* Vertical Text - Better positioned */}
-              <div className="service-title">
-                <h6>{service.title}</h6>
-              </div>
-
-              {/* Overlay for active - More prominent like second image */}
-              {isActive && (
-                <div className="service-overlay">
-                  <h3>{service.title}</h3>
-                  <div className="active-indicator"></div>
-                </div>
-              )}
             </div>
           );
         })}
@@ -84,3 +66,4 @@ const OurServices = () => {
 };
 
 export default OurServices;
+

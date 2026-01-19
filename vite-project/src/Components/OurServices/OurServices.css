@@ -1,308 +1,122 @@
+/* WRAPPER */
 .services-wrapper {
-  width: 100%;
   min-height: 100vh;
   background: #0b1725;
-  padding: 60px 40px;
-  overflow: hidden;
+  padding: 60px 80px;
 }
 
-.services-heading h2 {
-  color: #fff;
-  font-size: 46px;
-  font-weight: 600;
-  margin-bottom: 40px;
+.services-heading {
   text-align: center;
+  font-size: 46px;
+  color: #fff;
+  margin-bottom: 50px;
 }
 
-/* GRID LAYOUT */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
+/* ROW */
+.services-row {
+  display: flex;
   height: 520px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(255,255,255,0.12);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
 }
 
-/* EACH COLUMN */
-.service-card {
-  position: relative;
+/* TEXT + IMAGE PAIR */
+.service-pair {
+  display: flex;
+  height: 100%;
+}
+
+/* VERTICAL ITEM */
+.vertical-item {
+  width: 90px;
+  border-right: 1px solid rgba(255,255,255,0.12);
   cursor: pointer;
-  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
-  overflow: hidden;
-  transition: all 0.5s ease;
-  min-height: 500px;
+  align-items: flex-end;
+  padding-bottom: 40px;
+  transition: width 0.6s ease;
 }
 
-.service-card:last-child {
-  border-right: none;
+.vertical-item.active {
+  width: 50px;
 }
 
-/* TOP NUMBER */
-.service-number {
+/* NUMBER */
+.vertical-number {
   position: absolute;
-  top: 18px;
-  left: 18px;
-  font-size: 14px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.7);
-  letter-spacing: 1px;
-  z-index: 5;
+  top: 20px;
+  left: 15px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
 }
 
-/* IMAGE CONTAINER */
-.service-image-container {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* TEXT */
+.vertical-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.75);
+  font-weight: 600;
+  transition: opacity 0.4s ease;
+}
+
+.vertical-item.active .vertical-text {
+  opacity: 0;
+}
+
+/* IMAGE NEXT RIGHT */
+.inline-image {
+  width: 0;
   overflow: hidden;
-}
-
-/* IMAGE STYLES */
-.service-image {
-  width: 100%;
-  height: 100%;
-  transition: all 0.6s ease;
+  transition: width 0.8s ease;
   position: relative;
 }
 
-.service-image img {
-  width: 100%;
+.inline-image img {
+  width: 320px;
   height: 100%;
   object-fit: cover;
-  transition: all 0.6s ease;
 }
 
-/* For inactive cards - smaller, darker */
-.service-image img.inactive-image {
-  transform: scale(0.9);
-  opacity: 0.2;
-  filter: brightness(0.4);
+/* SHOW IMAGE */
+.inline-image.show {
+  width: 320px;
 }
 
-/* For active card - full size, bright */
-.service-image img.active-image {
-  transform: scale(1);
-  opacity: 1;
-  filter: brightness(1);
-}
-
-/* VERTICAL TITLE */
-.service-title {
-  position: absolute;
-  bottom: 25px; /* Position from bottom */
-  left: 50%;
-  transform: translateX(-50%); /* Remove rotation */
-  z-index: 10;
-  width: 100%;
-  text-align: center;
-  pointer-events: none;
-  padding: 0 15px; /* Add side padding */
-  box-sizing: border-box;
-}
-
-.service-title h6 {
-  margin: 0;
-  font-size: 12px; /* Smaller font */
-  font-weight: 600;
-  letter-spacing: 1px; /* Reduced spacing */
-  color: rgba(255, 255, 255, 0.85);
-  transition: 0.4s ease;
-  text-transform: uppercase;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; /* Add ... if still too long */
-  max-width: 100%;
-}
-
-/* ACTIVE CARD */
-.service-card.active {
-  background: rgba(255, 255, 255, 0.04);
-  flex-grow: 1.2; /* Active card takes more space */
-}
-
-/* ACTIVE CARD */
-/* ACTIVE CARD */
-.service-card.active .service-title h6 {
-  color: #fff;
-  font-weight: 700;
-  font-size: 13px; /* Slightly larger when active */
-}
-.service-card:hover .service-title h6 {
-  color: #ffffff;
-}
-
-/* DARK OVERLAY TEXT (like second image) */
-/* .service-overlay {
-  position: absolute;
-  bottom: 35px;
-  left: 20px;
-  right: 20px;
-  background: rgba(0, 0, 0, 0.75);
-  padding: 15px 20px;
-  border-radius: 8px;
-  z-index: 15;
-  animation: fadeUp 0.4s ease;
-  /* backdrop-filter: blur(5px); */
-  /* border-left: 3px solid #4a9eff;
-}  */
-
-.service-overlay h3 {
-  margin: 0;
-  font-size: 20px;
-  font-weight: 600;
-  color: #fff;
-  letter-spacing: 1px;
-}
-
-.active-indicator {
-  position: absolute;
-  top: -3px;
-  left: 20px;
-  width: 30px;
-  height: 3px;
-  background: #4a9eff;
-  border-radius: 2px;
-}
-
-/* SMOOTH ANIMATION */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
-
-/* HOVER EFFECT */
-.service-card:hover .service-title h4 {
-  color: #ffffff;
-}
-
-.service-card:hover .service-image img.inactive-image {
-  opacity: 0.3;
-  filter: brightness(0.6);
-}
-
-/* RESPONSIVE - Enhanced for better mobile experience */
-/* RESPONSIVE - Enhanced for better mobile experience */
-@media (max-width: 1200px) {
-  .services-grid {
-    grid-template-columns: repeat(3, 1fr);
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .services-row {
+    flex-direction: column;
     height: auto;
-    min-height: 600px;
   }
 
-  .service-card {
-    height: 350px;
-    min-height: 350px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  .service-pair {
+    flex-direction: column;
   }
 
-  .service-card:nth-child(3n) {
-    border-right: none;
+  .vertical-item {
+    width: 100%;
+    height: 70px;
+    align-items: center;
+    padding-bottom: 0;
   }
 
-  .service-title {
-    bottom: 15px;
+  .vertical-text {
+    writing-mode: horizontal-tb;
+    transform: none;
+    opacity: 1 !important;
   }
 
-  .service-title h6 {
-    font-size: 11px;
-  }
-}
-
-@media (max-width: 768px) {
-  .services-wrapper {
-    padding: 40px 20px;
-  }
-
-  .services-heading h2 {
-    font-size: 32px;
-  }
-
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-    min-height: 500px;
-  }
-
-  .service-card {
+  .inline-image,
+  .inline-image.show {
+    width: 100%;
     height: 300px;
-    min-height: 300px;
   }
 
-  .service-card:nth-child(2n) {
-    border-right: none;
-  }
-
-  .service-title h6 {
-    font-size: 10px;
-    letter-spacing: 0.8px;
-  }
-
-  .service-overlay {
-    bottom: 25px;
-    left: 15px;
-    right: 15px;
-    padding: 12px 15px;
-  }
-
-  .service-overlay h3 {
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 576px) {
-  .services-grid {
-    grid-template-columns: 1fr;
-    min-height: 400px;
-  }
-
-  .service-card {
-    height: 280px;
-    min-height: 280px;
-    border-right: none !important;
-  }
-
-  .services-heading h2 {
-    font-size: 28px;
-    margin-bottom: 30px;
-  }
-
-  .service-title h6 {
-    font-size: 9px;
-    letter-spacing: 0.5px;
-  }
-
-  .service-number {
-    top: 12px;
-    left: 12px;
-    font-size: 12px;
-  }
-}
-
-/* For very small screens */
-@media (max-width: 380px) {
-  .service-card {
-    height: 250px;
-    min-height: 250px;
-  }
-
-  .service-title h6 {
-    font-size: 8px;
-  }
-
-  .service-overlay h3 {
-    font-size: 16px;
+  .inline-image img {
+    width: 100%;
   }
 }

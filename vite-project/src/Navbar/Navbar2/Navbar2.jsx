@@ -244,7 +244,7 @@ const Navbar2 = () => {
 
           {/* LOGO */}
           <div className="flex items-center">
-            <img src="/Images/HomeImage.png" alt="Logo" className="h-20 w-28" />
+            <img src="/Images/HomeImage.png" alt="Logo" className="h-20 w-30" />
           </div>
 
           {/* DESKTOP NAV */}
