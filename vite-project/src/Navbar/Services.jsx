@@ -9,7 +9,7 @@ const Services = () => {
     className="services-hero-section"
     style={{
       backgroundImage:
-        "url('https://codeitconsulting.co.in/assets/img/breadcrumb/1.jpg')",
+        `url()`,
     }}
   >
     <h1 className="services-main-title">Consulting</h1>

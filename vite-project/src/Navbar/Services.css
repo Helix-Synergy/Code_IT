@@ -21,6 +21,7 @@
   margin: 30px 0 60px 0;
   border-radius: 10px;
   overflow: hidden;
+ background-image: url("/Images/ConsultingImage.webp") !important;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
 }
 
@@ -102,7 +103,9 @@
   border-radius: 10px; /* Reduced border radius */
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Reduced shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .services-img-box:hover {
@@ -133,7 +136,7 @@
 }
 
 .services-section-title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -176,7 +179,9 @@
 
 /* Hover Animation for Sections */
 .services-section {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .services-section:hover {
@@ -189,34 +194,34 @@
   .services-page {
     padding: 15px;
   }
-  
+
   .services-hero-section {
     height: 200px; /* Reduced */
     margin-bottom: 30px; /* Reduced */
   }
-  
+
   .services-main-title {
     font-size: 2.2rem; /* Reduced from 3rem */
   }
-  
+
   .services-section {
     gap: 25px; /* Reduced */
     margin-bottom: 45px; /* Reduced */
     padding: 25px 15px; /* Reduced */
   }
-  
+
   .services-img-box {
     min-width: 240px; /* Reduced */
   }
-  
+
   .services-img-box img {
     height: 260px; /* Reduced from 300px */
   }
-  
+
   .services-section-title {
     font-size: 1.5rem; /* Reduced from 2rem */
   }
-  
+
   .services-section-description {
     font-size: 0.9rem; /* Reduced from 1rem */
   }
@@ -227,56 +232,56 @@
   .services-page {
     padding: 10px;
   }
-  
+
   .services-hero-section {
     height: 180px; /* Reduced */
     margin-bottom: 25px; /* Reduced */
   }
-  
+
   .services-main-title {
     font-size: 1.8rem; /* Reduced from 2.5rem */
     padding: 12px; /* Reduced */
   }
-  
+
   .services-section {
     flex-direction: column;
     gap: 25px; /* Reduced */
     margin-bottom: 40px; /* Reduced */
     padding: 20px 15px; /* Reduced */
   }
-  
+
   .services-section-normal,
   .services-section-reverse {
     flex-direction: column;
   }
-  
+
   .services-img-box {
     width: 100%;
     min-width: unset;
     order: 2;
   }
-  
+
   .services-img-box img {
     height: 220px; /* Reduced from 250px */
     width: 100%;
   }
-  
+
   .services-text-content {
     order: 1;
     padding: 0;
   }
-  
+
   .services-section-title {
     font-size: 1.4rem; /* Reduced from 1.8rem */
     text-align: center;
     padding-bottom: 8px; /* Reduced */
   }
-  
+
   .services-section-title::after {
     left: 50%;
     transform: translateX(-50%);
   }
-  
+
   .services-section-description {
     font-size: 0.85rem; /* Reduced from 0.95rem */
     line-height: 1.5; /* Reduced from 1.7 */
@@ -289,24 +294,24 @@
   .services-hero-section {
     height: 160px; /* Reduced */
   }
-  
+
   .services-main-title {
     font-size: 1.5rem; /* Reduced from 2rem */
   }
-  
+
   .services-section {
     padding: 18px 12px; /* Reduced */
     margin-bottom: 35px; /* Reduced */
   }
-  
+
   .services-section-title {
     font-size: 1.3rem; /* Reduced from 1.6rem */
   }
-  
+
   .services-img-box img {
     height: 180px; /* Reduced from 200px */
   }
-  
+
   .services-section-description {
     font-size: 0.82rem; /* Reduced from 0.9rem */
     line-height: 1.4; /* Reduced */
@@ -319,28 +324,28 @@
     max-width: 1600px;
     padding: 30px; /* Reduced from 40px */
   }
-  
+
   .services-hero-section {
     height: 320px; /* Reduced from 400px */
   }
-  
+
   .services-main-title {
     font-size: 3.5rem; /* Reduced from 5rem */
   }
-  
+
   .services-section {
     padding: 40px 30px; /* Reduced */
     margin-bottom: 70px; /* Reduced */
   }
-  
+
   .services-img-box img {
     height: 340px; /* Reduced from 400px */
   }
-  
+
   .services-section-title {
     font-size: 2.2rem; /* Reduced from 3rem */
   }
-  
+
   .services-section-description {
     font-size: 1rem; /* Reduced from 1.2rem */
   }
