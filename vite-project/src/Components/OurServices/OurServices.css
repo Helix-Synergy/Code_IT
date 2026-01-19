@@ -1,4 +1,128 @@
 /* WRAPPER */
+/* .services-wrapper {
+  min-height: 100vh;
+  background: #0b1725;
+  padding: 60px 80px;
+} */
+
+/* .services-heading {
+  text-align: center;
+  font-size: 46px;
+  color: #fff;
+  margin-bottom: 50px;
+} */
+
+/* ROW */
+/* .services-row {
+  display: flex;
+  height: 520px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+} */
+
+/* TEXT + IMAGE PAIR */
+/* .service-pair {
+  display: flex;
+  height: 100%;
+} */
+
+/* VERTICAL ITEM */
+/* .vertical-item {
+  width: 90px;
+  border-right: 1px solid rgba(255,255,255,0.12);
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 40px;
+  transition: width 0.6s ease;
+} */
+
+/* .vertical-item.active {
+  width: 50px;
+} */
+
+/* NUMBER */
+/* .vertical-number {
+  position: absolute;
+  top: 20px;
+  left: 15px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+} */
+
+/* TEXT */
+/* .vertical-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.75);
+  font-weight: 600;
+  transition: opacity 0.4s ease;
+} */
+
+/* .vertical-item.active .vertical-text {
+  opacity: 0;
+} */
+
+/* IMAGE NEXT RIGHT */
+/* .inline-image {
+  width: 0;
+  overflow: hidden;
+  transition: width 0.8s ease;
+  position: relative;
+} */
+
+/* .inline-image img {
+  width: 320px;
+  height: 100%;
+  object-fit: cover;
+} */
+
+/* SHOW IMAGE */
+/* .inline-image.show {
+  width: 320px;
+} */
+
+/* RESPONSIVE */
+/* @media (max-width: 1024px) {
+  .services-row {
+    flex-direction: column;
+    height: auto;
+  } */
+
+  /* .service-pair {
+    flex-direction: column;
+  } */
+
+  /* .vertical-item {
+    width: 100%;
+    height: 70px;
+    align-items: center;
+    padding-bottom: 0;
+  } */
+
+  /* .vertical-text {
+    writing-mode: horizontal-tb;
+    transform: none;
+    opacity: 1 !important;
+  } */
+
+  /* .inline-image,
+  .inline-image.show {
+    width: 100%;
+    height: 300px;
+  } */
+
+  /* .inline-image img {
+    width: 100%;
+  } */
+/* } */
+
+/* copy starts from here */
+/* WRAPPER */
 .services-wrapper {
   min-height: 100vh;
   background: #0b1725;
@@ -24,6 +148,7 @@
 .service-pair {
   display: flex;
   height: 100%;
+    flex: 1;
 }
 
 /* VERTICAL ITEM */
@@ -120,3 +245,4 @@
     width: 100%;
   }
 }
+
