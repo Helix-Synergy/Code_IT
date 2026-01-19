@@ -6,19 +6,19 @@ const Innovations = () => {
 
   const slides = [
     {
-      image: "../../../public/Images/one.jpg",
+      image:  "/Images/one.jpg",
       title: "Innovative IT Solutions for Modern Businesses",
       description:
         "We bring a fresh, dynamic perspective to every client relationship, driven by a relentless energy that sparks action.",
     },
     {
-      image: "../../../public/Images/two.webp",
+      image: "/Images/two.webp",
       title: "Innovative IT Solutions for Modern Businesses",
       description:
         "We bring a fresh, dynamic perspective to every client relationship, driven by a relentless energy that sparks action.",
     },
     {
-      image: "../../../public/Images/three.jpg",
+      image: "/Images/three.jpg",
       title: "Innovative IT Solutions for Modern Businesses",
       description:
         "We bring a fresh, dynamic perspective to every client relationship, driven by a relentless energy that sparks action.",

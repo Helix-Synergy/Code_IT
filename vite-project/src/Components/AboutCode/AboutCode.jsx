@@ -47,7 +47,7 @@ const AboutCode = () => {
       
       {/* Image Section */}
       <div className="about-code-image">
-   <img src="../../../public/Images/aboutCodeIT.jpg" alt="About Code IT Consulting" />
+   <img src="/Images/aboutCodeIT.jpg" alt="About Code IT Consulting" />
 
       </div>
     </div>
