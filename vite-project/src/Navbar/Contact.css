@@ -11,17 +11,17 @@
 /* Hero Banner */
 .contact-hero-banner {
   background-image: url('/Images1/Prod/banner-inner.jpg');
+   height: 400px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  border-radius: 10px;
-  margin: 20px 0 40px 0;
   position: relative;
+  margin: 30px 0 60px 0;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .contact-hero-banner::before {

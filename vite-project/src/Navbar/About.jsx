@@ -3,7 +3,9 @@ import "./About.css";
 const About = () => {
   return (
     //
+    
     <div className="about-section">
+<br />
 <div
   className="about-header"
   style={{

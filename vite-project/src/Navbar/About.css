@@ -8,14 +8,17 @@
 
 .about-header {
   /* background-image: url('https://codeitconsulting.co.in/assets/img/about/two/Untitled-design.png'); */
+   height: 400px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  margin: 70px 0 60px 0;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .about-header::before {

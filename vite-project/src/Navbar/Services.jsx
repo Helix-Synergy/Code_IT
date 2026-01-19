@@ -12,7 +12,7 @@ const Services = () => {
         "url('https://codeitconsulting.co.in/assets/img/breadcrumb/1.jpg')",
     }}
   >
-    <h1 className="services-main-title">Services</h1>
+    <h1 className="services-main-title">Consulting</h1>
   </div>
 </div>
 

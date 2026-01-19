@@ -50,6 +50,17 @@ const App = () => {
         <Route path="/tech-publications" element={<Academics />}></Route>
         <Route path="/patent-filing" element={<Academics />}></Route>
         <Route path="/tech-meets-talks" element={<Academics />}></Route>
+        {/* Prod kit */}
+        <Route path="/products/c-port" element={<Pro />}></Route>
+        <Route path="/products/c-care" element={<Pro />}></Route>
+        <Route path="/products/c-raise" element={<Pro />}></Route>
+        <Route path="/products/c-emptor" element={<Pro />}></Route>
+        <Route path="/products/c-trans" element={<Pro />}></Route>
+        <Route path="/products/c-viand" element={<Pro />}></Route>
+        <Route path="/products/c-lit" element={<Pro />}></Route>
+        <Route path="/products/c-track" element={<Pro />}></Route>
+        <Route path="/products/c-get" element={<Pro />}></Route>
+        <Route path="/products/c-assist" element={<Pro />}></Route>
       </Routes>
       {/* <BrowserRouter> */}
       <br />

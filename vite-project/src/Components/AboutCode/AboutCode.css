@@ -11,7 +11,7 @@
 }
 
 .about-code-content {
-  width: 100%;
+  max-width: 680px;
 }
 
 .about-code-title {
@@ -19,14 +19,17 @@
   font-weight: 600;
   margin-bottom: 1rem;
   color: #fff;
-  text-align: center;
+  text-align: justify;
 }
 
 .about-code-description {
-   font-size: 1.1rem;
-  line-height: 1.8;
+   font-size: 1.05rem;
+  line-height: 1.7;
   color: #e2e8f0;
   text-align: justify;
+  text-justify: inter-word;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 .about-code-stats {
@@ -102,7 +105,7 @@
 }
 
 .success-description {
-  text-align: center;
+  text-align: justify;
   color: #ccc;
   line-height: 1.6;
   margin-bottom: 1.5rem;
@@ -199,6 +202,7 @@
     font-size: 0.9rem;
     line-height: 1.5;
     margin-bottom: 1.2rem;
+      text-align: left;
   }
   
   .about-code-stats {
@@ -301,7 +305,7 @@
 
   .about-code-description {
     font-size: 1rem;
-    text-align: left;
+    /* text-align: left; */
     line-height: 1.6;
     margin-bottom: 2rem;
   }
@@ -363,7 +367,7 @@
 
   .success-description {
     font-size: 1rem;
-    text-align: left;
+    text-align: justify;
     margin-bottom: 2rem;
   }
 
@@ -429,7 +433,7 @@
   }
 
   .about-code-description {
-    text-align: left;
+    text-align: justify;
     font-size: 1.05rem;
     line-height: 1.7;
     margin-bottom: 2.5rem;
@@ -497,7 +501,7 @@
   }
 
   .success-description {
-    text-align: left;
+    text-align: justify;
     font-size: 1.05rem;
     margin-bottom: 2rem;
   }

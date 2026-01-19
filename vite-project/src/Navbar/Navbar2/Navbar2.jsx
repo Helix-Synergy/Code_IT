@@ -278,7 +278,93 @@ const Navbar2 = () => {
               </div>
             </div>
 
-            <Link to="/products" className="hover:text-blue-600 no-underline text-white">Prod-Kit</Link>
+          {/* prod it */}
+<div className="relative group">
+  {/* Main Menu */}
+  <Link
+    to="/products"
+    className="text-white no-underline hover:text-blue-600 transition-colors"
+  >
+    Prod-Kit
+  </Link>
+
+  {/* Dropdown */}
+  <div className="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg rounded-md w-56 py-2 border border-gray-100 z-50">
+    
+    <Link
+      to="/products/c-port"
+      className="block px-4 py-2 text-sm text-gray-700 no-underline hover:bg-blue-50 hover:text-blue-600 transition-colors"
+    >
+      C-PORT
+    </Link>
+
+    <Link
+      to="/products/c-care"
+      className="block px-4 py-2 text-sm text-gray-700 no-underline hover:bg-blue-50 hover:text-blue-600 transition-colors"
+    >
+      C-CARE
+    </Link>
+
+    <Link
+      to="/products/c-raise"
+      className="block px-4 py-2 text-sm text-gray-700 no-underline hover:bg-blue-50 hover:text-blue-600 transition-colors"
+    >
+      C-RAISE
+    </Link>
+
+    <Link
+      to="/products/c-emptor"
+      className="block px-4 py-2 text-sm text-gray-700 no-underline hover:bg-blue-50 hover:text-blue-600 transition-colors"
+    >
+      C-EMPTOR
+    </Link>
+
+    <Link
+      to="/products/c-trans"
+      className="block px-4 py-2 text-sm text-gray-700 no-underline hover:bg-blue-50 hover:text-blue-600 transition-colors"
+    >
+      C-TRANS
+    </Link>
+
+    <Link
+      to="/products/c-viand"
+      className="block px-4 py-2 text-sm text-gray-700 no-underline hover:bg-blue-50 hover:text-blue-600 transition-colors"
+    >
+      C-VIAND
+    </Link>
+
+    <Link
+      to="/products/c-lit"
+      className="block px-4 py-2 text-sm text-gray-700 no-underline hover:bg-blue-50 hover:text-blue-600 transition-colors"
+    >
+      C-LIT
+    </Link>
+
+    <Link
+      to="/products/c-track"
+      className="block px-4 py-2 text-sm text-gray-700 no-underline hover:bg-blue-50 hover:text-blue-600 transition-colors"
+    >
+      C-TRACK
+    </Link>
+
+    <Link
+      to="/products/c-get"
+      className="block px-4 py-2 text-sm text-gray-700 no-underline hover:bg-blue-50 hover:text-blue-600 transition-colors"
+    >
+      C-GET
+    </Link>
+
+    <Link
+      to="/products/c-assist"
+      className="block px-4 py-2 text-sm text-gray-700 no-underline hover:bg-blue-50 hover:text-blue-600 transition-colors"
+    >
+      C-ASSIST
+    </Link>
+
+  </div>
+</div>
+
+
 
             {/* INDUSTRIES */}
             <div className="relative group">
