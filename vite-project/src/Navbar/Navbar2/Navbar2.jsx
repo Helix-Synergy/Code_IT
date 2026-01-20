@@ -240,15 +240,19 @@ const Navbar2 = () => {
     <>
       {/* HEADER */}
       <header className="w-full bg-[#0A0D1F] shadow-sm fixed top-0 z-50">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 lg:px-6 py-3">
+<div className="max-w-7xl mx-auto flex items-center px-4 lg:px-6 py-3">
+
+
 
           {/* LOGO */}
-          <div className="flex items-center">
+          <div className="flex items-center shrink-0">
+
             <img src="/Images/HomeImage.png" alt="Logo" className="h-20 w-[130px]" />
           </div>
 
           {/* DESKTOP NAV */}
-          <nav className="hidden lg:flex items-center gap-8 text-white font-medium">
+   <nav className="hidden lg:flex flex-1 justify-center items-center gap-8 text-white font-medium">
+
             <Link to="/" className="hover:text-blue-600 no-underline text-white">Home</Link>
             <Link to="/about" className="hover:text-blue-600 no-underline text-white ">About Us</Link>
 
@@ -368,9 +372,11 @@ const Navbar2 = () => {
 
             {/* INDUSTRIES */}
             <div className="relative group">
-              <span className="cursor-pointer hover:text-blue-600 no-underline text-center">
-                Industries<br />We serve
-              </span>
+             <span className="cursor-pointer hover:text-blue-600 no-underline text-center leading-tight">
+  Industries
+  <span className="block text-xs opacity-80">We serve</span>
+</span>
+
               <div className="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg rounded-md w-64 py-2 border border-gray-100">
                 <Link className="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600 transition-colors no-underline" to="/industries/it">Information Technology</Link>
                 <Link className="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600 transition-colors no-underline" to="/industries/healthcare">Health Care</Link>
@@ -388,7 +394,8 @@ const Navbar2 = () => {
           </nav>
 
           {/* RIGHT SECTION - PHONE NUMBER AND TRANSLATOR */}
-        <div className="hidden lg:flex items-center gap-6">
+<div className="hidden lg:flex items-center gap-6 shrink-0">
+
           <a href="tel:+918985998978">
   <button className="bg-blue-500 text-white font-semibold text-base px-4 py-2 rounded-full hover:bg-blue-600">
     +91 8985-998-978
