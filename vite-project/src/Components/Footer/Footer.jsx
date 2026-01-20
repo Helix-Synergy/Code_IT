@@ -81,7 +81,7 @@ const Footer = () => {
   </a>
 
   <a
-    href="https://www.youtube.com/@CodeITConsulting"
+    href="https://www.instagram.com/code.it.consulting/"
     target="_blank"
     rel="noopener noreferrer"
   >

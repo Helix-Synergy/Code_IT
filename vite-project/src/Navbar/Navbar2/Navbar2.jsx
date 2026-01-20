@@ -396,9 +396,9 @@ const Navbar2 = () => {
           {/* RIGHT SECTION - PHONE NUMBER AND TRANSLATOR */}
 <div className="hidden lg:flex items-center gap-6 shrink-0">
 
-          <a href="tel:+918985998978">
+          <a href="tel:+917075782798">
   <button className="bg-blue-500 text-white font-semibold text-base px-4 py-2 rounded-full hover:bg-blue-600">
-    +91 8985-998-978
+    +91 7075-782-798
   </button>
   </a>
   <div id="google_translate_element" className="text-sm relative top-2" />
