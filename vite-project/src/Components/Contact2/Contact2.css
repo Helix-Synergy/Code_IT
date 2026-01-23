@@ -420,3 +420,67 @@ background-image: url('/Images/InnoSolutions/free-consultation.avif');
     font-size: 12px;
   }
 }
+/* ===========================
+   MOBILE RESPONSIVE (≤768px)
+   =========================== */
+@media (max-width: 768px) {
+  .contact2-container {
+    height: auto;
+  }
+
+  .contact2-hero {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .contact2-content-wrapper {
+    align-items: center;
+  }
+
+  .contact2-header {
+    text-align: center;
+  }
+
+  .contact2-subtitle {
+    margin: 0 auto;
+  }
+
+  .contact2-form-wrapper {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+/* ===========================
+   TABLET RESPONSIVE (≤1024px)
+   =========================== */
+@media (max-width: 1024px) {
+  .contact2-container {
+    height: auto;
+  }
+
+  .contact2-hero {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .contact2-content-wrapper {
+    align-items: center;
+  }
+
+  .contact2-header {
+    text-align: center;
+  }
+
+  .contact2-subtitle {
+    margin: 0 auto;
+  }
+
+  .contact2-form-wrapper {
+    width: 70%;
+    margin-left: 0;
+  }
+}

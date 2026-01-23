@@ -680,3 +680,90 @@
     max-width: 520px;
   }
 }
+/* ===========================
+   TABLET RESPONSIVE (≤1024px)
+   =========================== */
+@media (max-width: 1024px) {
+  .innovations-container {
+    height: 650px;
+  }
+
+  .slide-content {
+    left: 40px;
+    bottom: 140px;
+    max-width: 500px;
+  }
+
+  .slider-services-container {
+    right: 40px !important;
+    bottom: 40px !important;
+  }
+
+  .slider-service-box {
+    width: 85px;
+    height: 85px;
+  }
+
+  .nav-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+  }
+}
+/* ===========================
+   MOBILE RESPONSIVE (≤768px)
+   =========================== */
+@media (max-width: 768px) {
+  .innovations-container {
+    height: 580px;
+  }
+
+  .slide-content {
+    left: 20px;
+    bottom: auto;
+    top: 30px;
+    max-width: 90%;
+  }
+
+  .slide-content h2 {
+    font-size: 2rem !important;
+  }
+
+  .slide-content p {
+    font-size: 1rem !important;
+  }
+
+  .slider-services-container {
+    right: 20px !important;
+    bottom: 20px !important;
+    gap: 8px;
+  }
+
+  .slider-service-box {
+    width: 65px;
+    height: 65px;
+  }
+
+  .slider-service-number {
+    font-size: 1rem;
+  }
+
+  .slider-service-title {
+    font-size: 0.6rem;
+  }
+
+  .nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.6rem;
+  }
+
+  .prev-btn {
+    left: 10px;
+  }
+
+  .next-btn {
+    right: 10px;
+  }
+}
+

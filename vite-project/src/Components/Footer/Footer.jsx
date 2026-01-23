@@ -7,8 +7,17 @@ import { LuMail } from "react-icons/lu";
 import { BsSend } from "react-icons/bs";
 import "./Footer.css";
 import { useNavigate } from 'react-router-dom';
+import {useState} from "react"
+import axios from "axios"
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const Footer = () => {
+const [email, setEmail] = useState("");
+const [loading, setLoading] = useState(false);
+
+
   const navigate = useNavigate();
 
   const scrollTop = () => {
@@ -49,6 +58,47 @@ const Footer = () => {
     navigate("/digital-transformation");
     scrollTop();
   };
+const handleEmailChange = (e) => {
+  setEmail(e.target.value);
+};
+
+const handleEmailSubmit = async () => {
+
+  if (!email) {
+    alert("Please enter an email");
+    return;
+  }
+  if (!email.includes("@")) {
+    toast.error("Please enter a valid email");
+    return;
+  }
+  setLoading(true);
+
+  try {
+const res = await axios.post(
+  `${API_BASE_URL}/newsletter/submitEmail`,
+  { email },
+  {
+    headers: {
+      "Content-Type": "application/json",
+    },
+    timeout: 10000,
+  }
+);
+
+
+    toast.success("Subscribed successfully!");
+    setEmail(""); // clear input
+  } catch (error) {
+    console.error(error);
+    toast.error(
+      error.response?.data?.message ||
+      "Something went wrong. Try again."
+    );
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="footer-container">
@@ -129,13 +179,22 @@ const Footer = () => {
     <div className="newsletter-box">
   <LuMail className="mail-icon" />
   <label for="email-input" class="visually-hidden">Email address</label>
-  <input 
-    id="email-input"
-    type="email"
-    placeholder="Enter your email"
-    aria-label="Enter your email address"
-  />
-  <BsSend className="send-icon" />
+ 
+  <input
+   id="email-input"
+  type="email"
+     placeholder="Enter your email"
+       aria-label="Enter your email address"
+  value={email}
+  onChange={handleEmailChange}
+  onKeyDown={(e) => e.key === "Enter" && handleEmailSubmit()}
+/>
+
+<BsSend
+  className="send-icon"
+  onClick={handleEmailSubmit}
+  style={{ cursor: "pointer", opacity: loading ? 0.5 : 1 }}
+/>
 </div>
       </div>
 

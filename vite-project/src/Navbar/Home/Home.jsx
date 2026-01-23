@@ -21,7 +21,9 @@ const Home = () => {
   return (
     <div>
     
-
+<br></br>
+<br></br>
+<br />
       <Innovations />
       <Vision />
       <AboutCode />
