@@ -3,7 +3,7 @@ import axios from "axios";
 import "./Contact2.css";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
-
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 const Contact2 = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -38,7 +38,7 @@ const Contact2 = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/consultation/consultationForm",
+        `${API_BASE_URL}/consultation/consultationForm`,
         {
           name: formData.name,
           email: formData.email,

@@ -3,7 +3,7 @@ import "./PaymentDetails.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
-
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 const dropdownOptions = {
   Consulting: [
     "Digital Transformation",
@@ -56,18 +56,21 @@ const PaymentDetails = () => {
 
     try {
       // 1️⃣ Create order on backend
-      const response = await axios.post(
-        "http://localhost:5000/serviceselection/save",
-        {
-          name,
-          email,
-          message,
-          category,
-          subCategory,
-          amount: Number(amount),
-        },
-        { headers: { "Content-Type": "application/json" } }
-      );
+ const response = await axios.post(
+  `${API_BASE_URL}/serviceselection/save`,
+  {
+    name,
+    email,
+    message,
+    category,
+    subCategory,
+    amount: Number(amount),
+  },
+  {
+    headers: { "Content-Type": "application/json" },
+  }
+);
+
 
       const data = response.data;
 
@@ -91,13 +94,14 @@ const PaymentDetails = () => {
           try {
             // 3️⃣ Verify payment on backend
             const verifyResponse = await axios.post(
-              "http://localhost:5000/api/payment/verify-payment/",
+            `${API_BASE_URL}/serviceselection/verify-payment`,
               {
                 orderId: razorpayResponse.razorpay_order_id,
                 paymentId: razorpayResponse.razorpay_payment_id,
                 signature: razorpayResponse.razorpay_signature,
               },
-              { headers: { "Content-Type": "application/json" } }
+              { headers: { "Content-Type": "application/json" } },
+              console.log(        `${API_BASE_URL}/serviceselection/verify-payment`)
             );
 
             toast.success(

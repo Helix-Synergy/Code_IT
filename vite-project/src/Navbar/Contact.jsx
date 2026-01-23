@@ -5,6 +5,7 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -21,15 +22,18 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        "http://localhost:5000/contact/contactform", // URL
-        formData, // Data to send (no JSON.stringify needed)
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        },
-      );
+   const response = await axios.post(
+  `${API_BASE_URL}/contact/contactform`, // dynamically use the env
+  formData, // your form data
+  {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }
+)
+ 
+
+    console.log("Response from server:", response.data);
 
       const data = response.data; // Axios automatically parses JSON
 
