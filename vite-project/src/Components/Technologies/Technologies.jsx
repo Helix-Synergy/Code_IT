@@ -37,7 +37,7 @@ const Technologies = () => {
                 and reduce errors. Scale operations effortlessly and accelerate
                 digital transformation.
               </Card.Text>
-              <Button variant="primary">View More</Button>
+              {/* <Button variant="primary">View More</Button> */}
             </Card.Body>
           </Card>
         </SwiperSlide>
@@ -51,7 +51,7 @@ const Technologies = () => {
               <Card.Text>
                Protect, secure, and actively defend. Powering advanced multi-factor authentication, robust encryption protocols, and proactive threat detection systems. Unlock new possibilities for businesses, enterprises, and digital operations.
               </Card.Text>
-              <Button variant="primary">View More</Button>
+              {/* <Button variant="primary">View More</Button> */}
             </Card.Body>
           </Card>
         </SwiperSlide>
@@ -68,7 +68,7 @@ const Technologies = () => {
                 predictive analytics. Unlock innovation and gain a competitive
                 edge with smart technologies.
               </Card.Text>
-              <Button variant="primary">View More</Button>
+              {/* <Button variant="primary">View More</Button> */}
             </Card.Body>
           </Card>
         </SwiperSlide>
@@ -85,7 +85,7 @@ const Technologies = () => {
                 innovations. Unlock new possibilities for businesses and
                 consumers alike.
               </Card.Text>
-              <Button variant="primary">View More</Button>
+              {/* <Button variant="primary">View More</Button> */}
             </Card.Body>
           </Card>
         </SwiperSlide>
@@ -99,7 +99,7 @@ const Technologies = () => {
               <Card.Text>
           Immutable, transparent, and highly reliable. Powering automated agreements, secure financial transactions, and end-to-end data traceability. Unlock new possibilities for businesses, enterprises, and industries alike.
               </Card.Text>
-              <Button variant="primary">View More</Button>
+              {/* <Button variant="primary">View More</Button> */}
             </Card.Body>
           </Card>
         </SwiperSlide>
@@ -113,7 +113,7 @@ const Technologies = () => {
               <Card.Text>
               Elevate experiences with interactive product demos and virtual tours. Powering realistic, risk-free employee training and immersive marketing simulations. Unlock new possibilities for businesses and consumers alike.
               </Card.Text>
-              <Button variant="primary">View More</Button>
+              {/* <Button variant="primary">View More</Button> */}
             </Card.Body>
           </Card>
         </SwiperSlide>

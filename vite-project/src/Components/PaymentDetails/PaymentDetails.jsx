@@ -1,9 +1,11 @@
 // import React, { useState } from "react";
-// import "./PaymentDetails.css";
+// import axios from "axios";
 // import { ToastContainer, toast } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
-// import axios from "axios";
+// import "./PaymentDetails.css";
+
 // const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 // const dropdownOptions = {
 //   Consulting: [
 //     "Digital Transformation",
@@ -36,16 +38,59 @@
 // };
 
 // const PaymentDetails = () => {
-//   const [name, setName] = useState("");
-//   const [email, setEmail] = useState("");
-//   const [message, setMessage] = useState("");
-//   const [category, setCategory] = useState("");
-//   const [subCategory, setSubCategory] = useState("");
-//   const [amount, setAmount] = useState("");
+//   const [form, setForm] = useState({
+//     name: "",
+//     email: "",
+//     message: "",
+//     category: "",
+//     subCategory: "",
+//     amount: "",
+//   });
+//   const [loading, setLoading] = useState(false);
+
+//   const handleChange = (e) =>
+//     setForm({ ...form, [e.target.name]: e.target.value });
+
+//   // Optional: Poll payment status until webhook updates DB
+//   const pollPaymentStatus = (orderId) => {
+//     const interval = setInterval(async () => {
+//       try {
+//         const { data } = await axios.get(
+//           `${API_BASE_URL}/serviceselection/payment-status/${orderId}`
+//         );
+
+//         if (data?.status === "paid") {
+//           // toast.success(" Payment confirmed successfully via webhook!");
+//           clearInterval(interval);
+//           setLoading(false);
+//           setForm({
+//             name: "",
+//             email: "",
+//             message: "",
+//             category: "",
+//             subCategory: "",
+//             amount: "",
+//           });
+//         }
+
+//         if (data?.status === "failed") {
+//         toast.error("Payment failed. Please try again.");
+
+//           clearInterval(interval);
+//           setLoading(false);
+//         }
+//       } catch (error) {
+//         console.error("Polling error:", error);
+//       }
+//     }, 3000);
+//   };
 
 //   const handlePayment = async () => {
+//     const { name, email, message, category, subCategory, amount } = form;
+
 //     if (!name || !email || !message || !category || !subCategory || !amount) {
-//       toast.error("Please fill all fields");
+//      toast.error("Please complete all required fields to proceed.");
+
 //       return;
 //     }
 
@@ -54,27 +99,27 @@
 //       return;
 //     }
 
+//     setLoading(true);
+// // toast.info("Initializing payment. Please wait...");
+
+
 //     try {
-//       // 1️⃣ Create order on backend
-//  const response = await axios.post(
-//   `${API_BASE_URL}/serviceselection/save`,
-//   {
-//     name,
-//     email,
-//     message,
-//     category,
-//     subCategory,
-//     amount: Number(amount),
-//   },
-//   {
-//     headers: { "Content-Type": "application/json" },
-//   }
-// );
+//       // 1️⃣ Create order
+//       const { data } = await axios.post(
+//         `${API_BASE_URL}/serviceselection/save`,
+//         { ...form, amount: Number(amount) }
+//       );
+
+//       if (!data?.order?.id) {
+//         toast.error("Order creation failed");
+//         setLoading(false);
+//         return;
+//       }
+
+//       toast.info("Redirecting to secure payment gateway...");
 
 
-//       const data = response.data;
-
-//       // 2️⃣ Razorpay options
+//       // 2️⃣ Open Razorpay checkout
 //       const options = {
 //         key: data.key,
 //         amount: data.order.amount,
@@ -82,95 +127,110 @@
 //         name: "Code IT Consulting",
 //         description: `${category} - ${subCategory}`,
 //         order_id: data.order.id,
+//         prefill: { name, email },
+//         theme: { color: "#484d54" },
 
-//         prefill: {
-//           name: name,
-//           email: email,
-//         },
+//         // ✅ Updated handler: verify payment immediately
+//         handler: async function (response) {
+//           toast.info("Payment received. Verifying transaction...");
 
-//         handler: async function (razorpayResponse) {
-//           // toast.info("Verifying payment...");
 
 //           try {
-//             // 3️⃣ Verify payment on backend
-//             const verifyResponse = await axios.post(
-//             `${API_BASE_URL}/serviceselection/verify-payment`,
+//             const { data: verifyData } = await axios.post(
+//               `${API_BASE_URL}/serviceselection/verify-payment`,
 //               {
-//                 orderId: razorpayResponse.razorpay_order_id,
-//                 paymentId: razorpayResponse.razorpay_payment_id,
-//                 signature: razorpayResponse.razorpay_signature,
-                
-//               },
-//               { headers: { "Content-Type": "application/json" } },
-             
+//                 orderId: response.razorpay_order_id,
+//                 paymentId: response.razorpay_payment_id,
+//                 signature: response.razorpay_signature,
+//               }
 //             );
 
-//             toast.success(
-//               verifyResponse.data.message || "Payment verified successfully"
-//             );
+//             if  (verifyData?.success) {
+//                setLoading(false);
+//          toast.success("Payment completed successfully Receipt will be emailed shortly.");
 
-//             // Reset form
-//             setName("");
-//             setEmail("");
-//             setMessage("");
-//             setCategory("");
-//             setSubCategory("");
-//             setAmount("");
-//           } catch (verifyError) {
-//             console.error(verifyError);
+//               setLoading(false);
+//               setForm({
+//                 name: "",
+//                 email: "",
+//                 message: "",
+//                 category: "",
+//                 subCategory: "",
+//                 amount: "",
+//               });
+//             } else {
 //             toast.error(
-//               verifyError.response?.data?.message ||
-//                 "Payment verification failed"
-                
-//             );
+//   "Payment verification failed. If the amount was deducted, it will be refunded automatically."
+// );
+
+//               setLoading(false);
+//             }
+//           } catch (err) {
+//             console.error("Verification error:", err);
+//             toast.error(err.response?.data?.message || "Verification failed");
+//             setLoading(false);
 //           }
+
+//           // Optional: start webhook polling in background
+//           pollPaymentStatus(data.order.id);
 //         },
 
-//         theme: { color: "#484d54" },
+//         modal: {
+//           ondismiss: () => {
+//          toast.error(
+//   "Payment was unsuccessful. Please try again or use a different payment method."
+// );
+
+//             setLoading(false);
+//           },
+//         },
 //       };
 
 //       const razorpay = new window.Razorpay(options);
 
 //       razorpay.on("payment.failed", function (response) {
-//         toast.error(response.error.description || "Payment failed");
+//         toast.error(response.error?.description || "Payment failed");
+//         setLoading(false);
 //       });
-
-//       toast.info("Opening payment gateway...");
+//   setLoading(false);
 //       razorpay.open();
-//     } catch (error) {
-//       console.error(error,"The actual error is here");
-//       console.log(error.response?.data?.message)
-//       toast.error(error.response?.data?.message || "Payment initiation failed");
+//     } catch (err) {
+//       console.error(err);
+//       toast.error(err.response?.data?.message || "Payment initiation failed");
+//       setLoading(false);
 //     }
 //   };
 
 //   return (
 //     <div className="payment-box">
-//       <ToastContainer />
+//       <ToastContainer position="top-right" autoClose={3000} />
 //       <h3>Payment Details</h3>
 
 //       <input
+//         name="name"
 //         type="text"
 //         placeholder="Your Name"
-//         value={name}
-//         onChange={(e) => setName(e.target.value)}
+//         value={form.name}
+//         onChange={handleChange}
 //       />
 
 //       <input
+//         name="email"
 //         type="email"
 //         placeholder="Your Email"
-//         value={email}
-//         onChange={(e) => setEmail(e.target.value)}
+//         value={form.email}
+//         onChange={handleChange}
 //       />
 
 //       <input
+//         name="message"
 //         type="text"
 //         placeholder="Your Message"
-//         value={message}
-//         onChange={(e) => setMessage(e.target.value)}
+//         value={form.message}
+//         onChange={handleChange}
 //       />
 
-//       <select value={category} onChange={(e) => setCategory(e.target.value)}>
+//       <select name="category" value={form.category} onChange={handleChange}>
 //         <option value="">Select Category</option>
 //         {Object.keys(dropdownOptions).map((cat) => (
 //           <option key={cat} value={cat}>
@@ -179,13 +239,14 @@
 //         ))}
 //       </select>
 
-//       {category && (
+//       {form.category && (
 //         <select
-//           value={subCategory}
-//           onChange={(e) => setSubCategory(e.target.value)}
+//           name="subCategory"
+//           value={form.subCategory}
+//           onChange={handleChange}
 //         >
 //           <option value="">Select Service</option>
-//           {dropdownOptions[category].map((sub) => (
+//           {dropdownOptions[form.category].map((sub) => (
 //             <option key={sub} value={sub}>
 //               {sub}
 //             </option>
@@ -194,25 +255,28 @@
 //       )}
 
 //       <input
+//         name="amount"
 //         type="number"
 //         placeholder="Enter Amount (INR)"
-//         value={amount}
-//         onChange={(e) => setAmount(e.target.value)}
+//         value={form.amount}
+//         onChange={handleChange}
 //       />
 
-//       <button onClick={handlePayment}>Pay Now</button>
+//       <button onClick={handlePayment} disabled={loading}>
+//         {loading ? "Processing..." : "Pay Now"}
+//       </button>
 //     </div>
 //   );
 // };
 
 // export default PaymentDetails;
-
-// -------------------code is here------------------
+// // ----------------------------------The code is from here-------------
+// -------------------------------the code is from here-----------------
 import React, { useState } from "react";
-import "./PaymentDetails.css";
+import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import axios from "axios";
+import "./PaymentDetails.css";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
@@ -248,16 +312,59 @@ const dropdownOptions = {
 };
 
 const PaymentDetails = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [category, setCategory] = useState("");
-  const [subCategory, setSubCategory] = useState("");
-  const [amount, setAmount] = useState("");
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+    category: "",
+    subCategory: "",
+    amount: "",
+  });
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
+
+  // Optional: Poll payment status until webhook updates DB
+  const pollPaymentStatus = (orderId) => {
+    const interval = setInterval(async () => {
+      try {
+        const { data } = await axios.get(
+          `${API_BASE_URL}/serviceselection/payment-status/${orderId}`
+        );
+
+        if (data?.status === "paid") {
+          // toast.success(" Payment confirmed successfully via webhook!");
+          clearInterval(interval);
+          setLoading(false);
+          setForm({
+            name: "",
+            email: "",
+            message: "",
+            category: "",
+            subCategory: "",
+            amount: "",
+          });
+        }
+
+        if (data?.status === "failed") {
+        toast.error("Payment failed. Please try again.");
+
+          clearInterval(interval);
+          setLoading(false);
+        }
+      } catch (error) {
+        console.error("Polling error:", error);
+      }
+    }, 3000);
+  };
 
   const handlePayment = async () => {
+    const { name, email, message, category, subCategory, amount } = form;
+
     if (!name || !email || !message || !category || !subCategory || !amount) {
-      toast.error("Please fill all fields");
+     toast.error("Please complete all required fields to proceed.");
+
       return;
     }
 
@@ -266,26 +373,27 @@ const PaymentDetails = () => {
       return;
     }
 
+    setLoading(true);
+// toast.info("Initializing payment. Please wait...");
+
+
     try {
-      // 1️⃣ Create order on backend
-      const response = await axios.post(
+      // 1️⃣ Create order
+      const { data } = await axios.post(
         `${API_BASE_URL}/serviceselection/save`,
-        {
-          name,
-          email,
-          message,
-          category,
-          subCategory,
-          amount: Number(amount),
-        },
-        {
-          headers: { "Content-Type": "application/json" },
-        }
+        { ...form, amount: Number(amount) }
       );
 
-      const data = response.data;
+      if (!data?.order?.id) {
+        toast.error("Order creation failed");
+        setLoading(false);
+        return;
+      }
 
-      // 2️⃣ Razorpay options
+      toast.info("Redirecting to secure payment gateway...");
+
+
+      // 2️⃣ Open Razorpay checkout
       const options = {
         key: data.key,
         amount: data.order.amount,
@@ -293,72 +401,127 @@ const PaymentDetails = () => {
         name: "Code IT Consulting",
         description: `${category} - ${subCategory}`,
         order_id: data.order.id,
+        prefill: { name, email },
+        theme: { color: "#484d54" },
 
-        prefill: {
-          name,
-          email,
+        // ✅ Updated handler: verify payment immediately
+        handler: async function (response) {
+          toast.info("Payment received. Verifying transaction...");
+
+
+          try {
+            const { data: verifyData } = await axios.post(
+              `${API_BASE_URL}/serviceselection/verify-payment`,
+              {
+                orderId: response.razorpay_order_id,
+                paymentId: response.razorpay_payment_id,
+                signature: response.razorpay_signature,
+              }
+            );
+
+       if (verifyData?.success) {
+  toast.success("Payment completed successfully. Receipt will be emailed shortly.");
+} else if (
+  verifyData?.message?.includes("already")
+) {
+  toast.success("Payment completed successfully. Receipt will be emailed shortly.");
+} else {
+  toast.error("Payment verification failed.");
+}
+
+
+              setLoading(false);
+              setForm({
+                name: "",
+                email: "",
+                message: "",
+                category: "",
+                subCategory: "",
+                amount: "",
+              });
+            } catch (err) {
+  console.error("Verification error:", err);
+  toast.error(
+    err.response?.data?.message ||
+    "Payment verification failed. If the amount was deducted, it will be refunded automatically."
+  );
+} finally {
+  setLoading(false);
+}
+          // Optional: start webhook polling in background
+          pollPaymentStatus(data.order.id);
         },
 
-        handler: function (razorpayResponse) {
-          console.log("Payment Success:", razorpayResponse);
+     modal: {
+  ondismiss: async () => {
+    toast.error(
+      "Payment cancelled. No amount was deducted."
+    );
 
-          toast.success("Payment successful ");
+    try {
+      await axios.post(
+        `${API_BASE_URL}/serviceselection/serviceselection/payment-failed`,
+        {
+          orderId: data.order.id,
+          reason: "User cancelled Razorpay popup",
+        }
+      );
+    } catch (err) {
+      console.error("Failed to update cancel status", err);
+    }
 
-          // Reset form
-          setName("");
-          setEmail("");
-          setMessage("");
-          setCategory("");
-          setSubCategory("");
-          setAmount("");
-        },
+    setLoading(false);
+  },
+},
 
-        theme: {
-          color: "#484d54",
-        },
+        
       };
 
       const razorpay = new window.Razorpay(options);
 
       razorpay.on("payment.failed", function (response) {
-        toast.error(response.error.description || "Payment failed");
+        toast.error(response.error?.description || "Payment failed");
+        setLoading(false);
       });
-
-      toast.info("Opening payment gateway...");
+  setLoading(false);
       razorpay.open();
-    } catch (error) {
-      console.error("Payment Error:", error);
-      toast.error(error.response?.data?.message || "Payment initiation failed");
+    } catch (err) {
+      console.error(err);
+      toast.error(err.response?.data?.message || "Payment initiation failed");
+      setLoading(false);
     }
   };
 
   return (
     <div className="payment-box">
-      <ToastContainer />
+      <ToastContainer position="top-right" autoClose={3000} />
       <h3>Payment Details</h3>
 
       <input
+        name="name"
         type="text"
         placeholder="Your Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
+        value={form.name}
+        onChange={handleChange}
       />
 
       <input
+        name="email"
         type="email"
         placeholder="Your Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        value={form.email}
+        onChange={handleChange}
       />
 
       <input
+        name="message"
         type="text"
         placeholder="Your Message"
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
+        value={form.message}
+        onChange={handleChange}
       />
 
-      <select value={category} onChange={(e) => setCategory(e.target.value)}>
+      <select name="category" value={form.category} onChange={handleChange}>
         <option value="">Select Category</option>
         {Object.keys(dropdownOptions).map((cat) => (
           <option key={cat} value={cat}>
@@ -367,13 +530,14 @@ const PaymentDetails = () => {
         ))}
       </select>
 
-      {category && (
+      {form.category && (
         <select
-          value={subCategory}
-          onChange={(e) => setSubCategory(e.target.value)}
+          name="subCategory"
+          value={form.subCategory}
+          onChange={handleChange}
         >
           <option value="">Select Service</option>
-          {dropdownOptions[category].map((sub) => (
+          {dropdownOptions[form.category].map((sub) => (
             <option key={sub} value={sub}>
               {sub}
             </option>
@@ -382,15 +546,19 @@ const PaymentDetails = () => {
       )}
 
       <input
+        name="amount"
         type="number"
         placeholder="Enter Amount (INR)"
-        value={amount}
-        onChange={(e) => setAmount(e.target.value)}
+        value={form.amount}
+        onChange={handleChange}
       />
 
-      <button onClick={handlePayment}>Pay Now</button>
+      <button onClick={handlePayment} disabled={loading}>
+        {loading ? "Processing..." : "Pay Now"}
+      </button>
     </div>
   );
 };
 
 export default PaymentDetails;
+// ----------------------------------The code is from here-------------

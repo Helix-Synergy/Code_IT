@@ -1,217 +1,7 @@
-// import React, { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
-// import { IoMdMenu } from "react-icons/io";
-// import "../Home/Home.css";
-
-// const Navbar2 = () => {
-//   const [menuOpen, setMenuOpen] = useState(false);
-
-//   // NEW: Controls which dropdown is open in mobile
-//   const [activeSubmenu, setActiveSubmenu] = useState(null);
-
-//   const toggleSubmenu = (menu) => {
-//     setActiveSubmenu(activeSubmenu === menu ? null : menu);
-//   };
-
-//   useEffect(() => {
-//     if (!document.getElementById("google-translate-script")) {
-//       const script = document.createElement("script");
-//       script.id = "google-translate-script";
-//       script.src =
-//         "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-//       document.body.appendChild(script);
-//     }
-
-//     window.googleTranslateElementInit = () => {
-//       const translateElement = document.getElementById(
-//         "google_translate_element"
-//       );
-//       translateElement.innerHTML = "";
-
-//       new window.google.translate.TranslateElement(
-//         { pageLanguage: "en" },
-//         "google_translate_element"
-//       );
-//     };
-//   }, []);
-
-//   return (
-//     <>
-//       <header className="home-header">
-//         {/* Logo Section */}
-//         <div className="logo">
-//          <img src="/Images/HomeImage.png" alt="Logo" />
-
-//         </div>
-
-//         {/* Desktop / Tablet Navigation */}
-//         <nav className="home-nav">
-//           <Link to="/">Home</Link>
-//           <Link to="/about">About Us</Link>
-
-//           {/* Desktop Services Dropdown */}
-//           <div className="dropdown">
-//             <span className="dropbtn" style={{ color: "#ddd" }}>
-//               Consulting
-//             </span>
-//             <div className="dropdown-content">
-//               <Link to="/digital-transformation">Digital Transformation</Link>
-//               <Link to="/software-development">Software Development</Link>
-//               <Link to="/app-development">App Development</Link>
-//               <Link to="/cyber-security">Cyber Security</Link>
-//               <Link to="/cyber-security">Networking</Link>
-//               <Link to="/data-management">Data Management</Link>
-//             </div>
-//           </div>
-
-//                <div className="dropdown">
-//   <Link
-//     to="/Academia"
-//     className="dropdown-link"
-//     onClick={() => setMenuOpen(false)}
-//   >
-//     Academia
-//   </Link>
-
-//   <div className="dropdown-menu">
-//     <Link to="/tech-internships">Tech Internships</Link>
-//     <Link to="/tech-projects">Tech Projects</Link>
-//     <Link to="/contract-research">Contract Research</Link>
-//     <Link to="/tech-publications">Tech Publications</Link>
-//     <Link to="/patent-filing">Patent Filing</Link>
-//     <Link to="/tech-meets-talks">Tech Meets & Talks</Link>
-//   </div>
-// </div>
-//           <Link to="/products">Prod-Kit</Link>
-
-//           {/* Desktop Industries Dropdown */}
-//           <div className="dropdown-industries">
-//             <span className="dropbtn-industries" style={{ color: "#ddd" }}>
-//               Industries
-//               We Server
-//             </span>
-//             <div className="dropdown-content-industries">
-//               <Link to="/industries/it">Information Technology</Link>
-//               <Link to="/industries/healthcare">Health Care</Link>
-//               <Link to="/industries/banking">Banking</Link>
-//               <Link to="/industries/finance">Finance</Link>
-//               <Link to="/industries/education">Education</Link>
-//               <Link to="/industries/retail">Retail</Link>
-//               <Link to="/industries/manufacturing">Manufacturing</Link>
-//               <Link to="/industries/ecommerce">E-Commerce</Link>
-//               <Link to="/industries/logistics">Logistics</Link>
-//             </div>
-//           </div>
-
-//           <Link to="/contact">Contact</Link>
-//         </nav>
-
-//         {/* Mobile Menu Icon */}
-//         <div
-//           className="mobile-menu-icon"
-//           onClick={() => setMenuOpen(!menuOpen)}
-//         >
-//           <IoMdMenu />
-//         </div>
-
-//         {/* Right Section */}
-//         <div className="right-section">
-//           <button className="call-btn">+91 8985-998-978</button>
-//           <div id="google_translate_element" className="translate-box"></div>
-//         </div>
-//       </header>
-
-//       {/* ------------------ MOBILE MENU ------------------ */}
-//       <div className={`mobile-dropdown ${menuOpen ? "show-menu" : ""}`}>
-//         <Link to="/" onClick={() => setMenuOpen(false)}>
-//           Home
-//         </Link>
-//         <Link to="/about" onClick={() => setMenuOpen(false)}>
-//           About Us
-//         </Link>
-
-//         {/* === MOBILE SERVICES SECTION === */}
-//         <div
-//           className="mobile-parent"
-//           onClick={() => toggleSubmenu("services")}
-//         >
-//           Services
-//           <span
-//             className={`arrow ${activeSubmenu === "services" ? "rotate" : ""}`}
-//           >
-//             ▶
-//           </span>
-//         </div>
-
-//         <div
-//           className={`mobile-submenu ${
-//             activeSubmenu === "services" ? "show-submenu" : ""
-//           }`}
-//         >
-//           <Link to="/digital-transformation">Digital Transformation</Link>
-//           <Link to="/software-development">Software Development</Link>
-//           <Link to="/app-development">App Development</Link>
-//           <Link to="/cyber-security">Cyber Security</Link>
-//           <Link to="/networking">Networking</Link>
-//           <Link to="/data-management">Data Management</Link>
-//         </div>
-
-//         <Link to="/Academia" onClick={() => setMenuOpen(false)}>
-//           Academia
-//         </Link>
-//         <Link to="/products" onClick={() => setMenuOpen(false)}>
-//           Prod-Kit
-//         </Link>
-
-//         {/* === MOBILE INDUSTRIES SECTION === */}
-//         <div
-//           className="mobile-parent"
-//           onClick={() => toggleSubmenu("industries")}
-//         >
-//           Industries
-//           <span
-//             className={`arrow ${
-//               activeSubmenu === "industries" ? "rotate" : ""
-//             }`}
-//           >
-//             ▶
-//           </span>
-//         </div>
-
-//         <div
-//           className={`mobile-submenu ${
-//             activeSubmenu === "industries" ? "show-submenu" : ""
-//           }`}
-//         >
-//           <Link to="/industries/it">Information Technology</Link>
-//           <Link to="/industries/healthcare">Health Care</Link>
-//           <Link to="/industries/banking">Banking</Link>
-//           <Link to="/industries/finance">Finance</Link>
-//           <Link to="/industries/education">Education</Link>
-//           <Link to="/industries/retail">Retail</Link>
-//           <Link to="/industries/manufacturing">Manufacturing</Link>
-//           <Link to="/industries/ecommerce">E-Commerce</Link>
-//           <Link to="/industries/logistics">Logistics</Link>
-//         </div>
-
-//         <Link to="/contact" onClick={() => setMenuOpen(false)}>
-//           Contact
-//         </Link>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Navbar2;
-/*
-NOTE:
-- NO text/content/routes changed
-- Same JSX data, only classes replaced with Tailwind
-- Dropdown + mobile behavior preserved
-*/
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { IoMdMenu } from "react-icons/io";
+import { IoMdClose } from "react-icons/io";
 
 const Navbar2 = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -246,7 +36,8 @@ const Navbar2 = () => {
     <>
       {/* HEADER */}
       <header className="w-full bg-[#0A0D1F] shadow-sm fixed top-0 z-50 h-24">
-      <div className="max-w-7xl mx-auto h-full flex items-center px-4 lg:px-6 ">
+     <div className="max-w-7xl mx-auto h-full flex items-center justify-between px-4 lg:px-6">
+
 
           {/* LOGO */}
        <div className="flex items-center h-full shrink-0">
@@ -538,30 +329,46 @@ const Navbar2 = () => {
           </div>
 
           {/* MOBILE ICON */}
-          <div
-            className="lg:hidden text-2xl cursor-pointer text-white"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            <IoMdMenu />
-          </div>
+       <div
+  className="lg:hidden text-2xl cursor-pointer text-white ml-auto"
+  onClick={() => setMenuOpen(!menuOpen)}
+>
+  <IoMdMenu />
+</div>
+
         </div>
       </header>
 
       {/* MOBILE MENU */}
-      <div
-        className={`lg:hidden fixed top-16 left-0 w-full bg-white shadow-md transition-all overflow-y-auto ${menuOpen ? "block" : "hidden"} z-40`}
-      >
+
+
+<div
+  className={`lg:hidden fixed top-16 right-0 h-[calc(100vh-4rem)] bg-gray-200 shadow-xl 
+  transition-transform duration-300 ease-in-out transform z-40
+  ${menuOpen ? "translate-x-0" : "translate-x-full"}
+  w-72 overflow-y-auto`}
+>
         <div className="flex flex-col p-4 gap-3">
+                {/* CLOSE BUTTON */}
+<div className="flex justify-end mb-2">
+  <button
+    onClick={() => setMenuOpen(false)}
+    className="p-2 rounded-full hover:bg-gray-300 transition-colors"
+    aria-label="Close menu"
+  >
+    <IoMdClose size={26} className="text-gray-800" />
+  </button>
+</div>
           <Link
             to="/"
-            className="py-2 px-3 hover:bg-gray-50 rounded"
+            className="py-2 px-3 hover:bg-gray-50 rounded no-underline text-black"
             onClick={() => setMenuOpen(false)}
           >
             Home
           </Link>
           <Link
             to="/about"
-            className="py-2 px-3 hover:bg-gray-50 rounded"
+            className="py-2 px-3 hover:bg-gray-50 rounded no-underline text-black"
             onClick={() => setMenuOpen(false)}
           >
             About Us
@@ -570,7 +377,7 @@ const Navbar2 = () => {
           {/* SERVICES - MOBILE */}
           <div
             onClick={() => toggleSubmenu("services")}
-            className="flex justify-between items-center py-2 px-3 hover:bg-gray-50 rounded cursor-pointer"
+            className="flex justify-between items-center py-2 px-3 hover:bg-gray-50 rounded cursor-pointer no-underline text-black"
           >
             <span>Consulting</span>
             <span
@@ -583,42 +390,42 @@ const Navbar2 = () => {
             <div className="ml-4 flex flex-col gap-1 border-l-2 border-gray-100 pl-3">
               <Link
                 to="/digital-transformation"
-                className="py-2 px-3 text-sm hover:bg-gray-50 rounded"
+                className="py-2 px-3 text-sm hover:bg-gray-50 rounded no-underline text-black"
                 onClick={() => setMenuOpen(false)}
               >
                 Digital Transformation
               </Link>
               <Link
                 to="/software-development"
-                className="py-2 px-3 text-sm hover:bg-gray-50 rounded"
+                className="py-2 px-3 text-sm hover:bg-gray-50 rounded no-underline text-black"
                 onClick={() => setMenuOpen(false)}
               >
                 Software Development
               </Link>
               <Link
                 to="/app-development"
-                className="py-2 px-3 text-sm hover:bg-gray-50 rounded"
+                className="py-2 px-3 text-sm hover:bg-gray-50 rounded no-underline text-black"
                 onClick={() => setMenuOpen(false)}
               >
                 App Development
               </Link>
               <Link
                 to="/cyber-security"
-                className="py-2 px-3 text-sm hover:bg-gray-50 rounded"
+                className="py-2 px-3 text-sm hover:bg-gray-50 rounded no-underline text-black"
                 onClick={() => setMenuOpen(false)}
               >
                 Cyber Security
               </Link>
               <Link
                 to="/networking"
-                className="py-2 px-3 text-sm hover:bg-gray-50 rounded"
+                className="py-2 px-3 text-sm hover:bg-gray-50 rounded no-underline text-black"
                 onClick={() => setMenuOpen(false)}
               >
                 Networking
               </Link>
               <Link
                 to="/data-management"
-                className="py-2 px-3 text-sm hover:bg-gray-50 rounded"
+                className="py-2 px-3 text-sm hover:bg-gray-50 rounded no-underline text-black"
                 onClick={() => setMenuOpen(false)}
               >
                 Data Management
@@ -628,14 +435,14 @@ const Navbar2 = () => {
 
           <Link
             to="/Academia"
-            className="py-2 px-3 hover:bg-gray-50 rounded"
+            className="py-2 px-3 hover:bg-gray-50 rounded no-underline text-black"
             onClick={() => setMenuOpen(false)}
           >
             Academia
           </Link>
           <Link
             to="/products"
-            className="py-2 px-3 hover:bg-gray-50 rounded"
+            className="py-2 px-3 hover:bg-gray-50 rounded no-underline text-black"
             onClick={() => setMenuOpen(false)}
           >
             Prod-Kit
@@ -657,63 +464,63 @@ const Navbar2 = () => {
             <div className="ml-4 flex flex-col gap-1 border-l-2 border-gray-100 pl-3">
               <Link
                 to="/industries/it"
-                className="py-2 px-3 text-sm hover:bg-gray-50 rounded"
+                className="py-2 px-3 text-sm hover:bg-gray-50 rounded no-underline text-black"
                 onClick={() => setMenuOpen(false)}
               >
                 Information Technology
               </Link>
               <Link
                 to="/industries/healthcare"
-                className="py-2 px-3 text-sm hover:bg-gray-50 rounded"
+                className="py-2 px-3 text-sm hover:bg-gray-50 rounded no-underline text-black"
                 onClick={() => setMenuOpen(false)}
               >
                 Health Care
               </Link>
               <Link
                 to="/industries/banking"
-                className="py-2 px-3 text-sm hover:bg-gray-50 rounded"
+                className="py-2 px-3 text-sm hover:bg-gray-50 rounded no-underline text-black"
                 onClick={() => setMenuOpen(false)}
               >
                 Banking
               </Link>
               <Link
                 to="/industries/finance"
-                className="py-2 px-3 text-sm hover:bg-gray-50 rounded"
+                className="py-2 px-3 text-sm hover:bg-gray-50 rounded no-underline text-black"
                 onClick={() => setMenuOpen(false)}
               >
                 Finance
               </Link>
               <Link
                 to="/industries/education"
-                className="py-2 px-3 text-sm hover:bg-gray-50 rounded"
+                className="py-2 px-3 text-sm hover:bg-gray-50 rounded no-underline text-black"
                 onClick={() => setMenuOpen(false)}
               >
                 Education
               </Link>
               <Link
                 to="/industries/retail"
-                className="py-2 px-3 text-sm hover:bg-gray-50 rounded"
+                className="py-2 px-3 text-sm hover:bg-gray-50 rounded no-underline text-black"
                 onClick={() => setMenuOpen(false)}
               >
                 Retail
               </Link>
               <Link
                 to="/industries/manufacturing"
-                className="py-2 px-3 text-sm hover:bg-gray-50 rounded"
+                className="py-2 px-3 text-sm hover:bg-gray-50 rounded no-underline text-black"
                 onClick={() => setMenuOpen(false)}
               >
                 Manufacturing
               </Link>
               <Link
                 to="/industries/ecommerce"
-                className="py-2 px-3 text-sm hover:bg-gray-50 rounded"
+                className="py-2 px-3 text-sm hover:bg-gray-50 rounded no-underline text-black"
                 onClick={() => setMenuOpen(false)}
               >
                 E-Commerce
               </Link>
               <Link
                 to="/industries/logistics"
-                className="py-2 px-3 text-sm hover:bg-gray-50 rounded"
+                className="py-2 px-3 text-sm hover:bg-gray-50 rounded no-underline text-black"
                 onClick={() => setMenuOpen(false)}
               >
                 Logistics
@@ -723,7 +530,7 @@ const Navbar2 = () => {
 
           <Link
             to="/contact"
-            className="py-2 px-3 hover:bg-gray-50 rounded"
+            className="py-2 px-3 hover:bg-gray-50 rounded no-underline text-black"
             onClick={() => setMenuOpen(false)}
           >
             Contact
@@ -734,9 +541,9 @@ const Navbar2 = () => {
             <div className="py-2 px-3">
               <a
                 href="tel:+918985998978"
-                className="inline-block py-2 px-4 border border-blue-600 text-blue-600 font-semibold rounded hover:bg-blue-50 transition-colors active:bg-blue-100"
+                className="inline-block py-2 px-4 border border-blue-600 text-blue-600 font-semibold rounded hover:bg-blue-50 transition-colors active:bg-blue-100 no-underline text-black"
               >
-                +91 8985-998-978
+              +91 7075-782-798
               </a>
             </div>
             <div className="py-2 px-3">
